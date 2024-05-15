@@ -1,0 +1,43 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/00_Personalized_search_engine/
+
+Title: Personalized search - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Personalized search engine
+Our endpoint /v1/items/search, generates personalized search results tailored for each user in your application.
+It considers user behavior, current trends, and more and returns a customized search result for each individual.
+This endpoint takes several parameters to generate customized search results.
+To implement this solution, please use the endpoint /v1/items/search. The required parameters and an example request body can be found in our sandbox here.
+You can find sample code for this implementation here.
+Please note
+category : User can search the items using category field using the value that you have mapped in the environment setup (mapper creation) with the "category" key.
+flag : If you have any boolean values in your dataset and set as flag in mapper settings you can pass those values to filter the items using flag field.
+sort : In sort field you have to pass columns that doesn't contain text field. You couldn't pass title, second_title, third_title, fourth_title, description as the column name.
+Previous
+Training your data
+Next
+Personalized Image Search
+Made with Material for MkDocs

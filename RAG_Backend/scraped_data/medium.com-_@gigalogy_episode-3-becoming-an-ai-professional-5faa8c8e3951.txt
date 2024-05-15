@@ -1,0 +1,66 @@
+URL: https://medium.com/@gigalogy/episode-3-becoming-an-ai-professional-5faa8c8e3951
+
+Title: Episode 3: Becoming an AI Professional | by Gigalogy | Medium
+
+Content:
+Open in app
+Sign up
+Sign in
+Write
+Episode 3: Becoming an AI Professional
+Gigalogy
+·
+Follow
+3 min read
+·
+Sep 20, 2023
+--
+In our previous episodes, we’ve explored the motivations behind venturing into the AI business and the crucial considerations when starting a company. Now, our focus shifts to the pivotal role of an “AI Professional.”
+Today, we will explore the journey to embark on a career in AI
+The Complexity of AI for Businesses:
+Identifying the right AI use cases to address corporate challenges is a formidable task. Why? Finding individuals within an organization who can envision AI-driven solutions that contribute to revenue growth is a rare occurrence. This is precisely where AI Professionals like us come into play. In the forthcoming episodes, we’ll delve into the reasons why organizations often lack in-house AI expertise.
+Understanding and Crafting Solutions:
+As AI Professionals, we dive deep into comprehending the intricacies of our client companies’ businesses. This encompasses not only the enterprise itself but also the broader industry landscape, market trends, and competition. By gaining an intimate understanding of specific industry needs, anticipating future requirements, and strategizing for differentiation, we lay the foundation for effective solutions. This process involves meticulous planning, budgeting, and projecting potential gains. This skill, often referred to as “consulting,” is an essential facet of an AI Professional’s toolkit.
+The Fusion of Technical and Domain Knowledge:
+While graduating from prestigious institutions like The University of Tokyo or MIT is commendable, crafting exceptional AI solutions may have a very low chance of success without domain-specific knowledge. In essence, becoming an AI Professional necessitates a blend of technical prowess and profound domain expertise. If I were to quantify the necessary ratio, it would be something like 5:5 or 4:6, with the latter emphasizing domain knowledge.
+To become an AI professional, one needs to possess 60% skillset and 40% technical knowledge.
+So, how does one embark on the journey to become an AI Professional?
+The Path to AI Expertise:
+Beginning a career in AI is a transformative journey that requires both technical skills and specialized knowledge. While a background in mathematics and physics can be advantageous, it is by no means a prerequisite. Here are some steps to initiate your journey toward becoming an AI professional:
+Step 1: Mastery of Programming Languages
+Commence your journey by mastering programming languages, with Python being a primary focus. Explore various machine learning libraries. Online courses and tutorials offer valuable resources for skill acquisition.
+Step 2: Identification of AI-Driven Solutions
+Analyze problems within your immediate surroundings and contemplate how AI can address them. Apply the knowledge gained in Step 1 to devise and implement innovative solutions.
+Step 3: Real-World Application and Internship
+Consider interning with AI-related companies to tackle real-life challenges and gain hands-on experience. During interviews, articulate your achievements from Steps 1 and 2 to increase your chances of success.
+I am genuinely excited about the future when I hear children say:
+“When I grow up, I want to develop AI solutions and contribute to making the world a better place!”
+It’s important to inspire the next generation to pursue careers in AI and continue pushing the boundaries of what’s possible.
+Stay tuned for the next part of our journey as we explore the world of AI and its potential for creating a better future.
+(Note: The original text includes hints about the author’s project, which will be elaborated further in the upcoming posts.)
+Don’t miss our previous episodes:
+Episode 1: My Journey to Japan and the Beginnings of my AI Adventure
+Episode 2: The Birth of “AI Solutions for Digital Products: Gigalogy AI Platform
+Sign up to discover human stories that deepen your understanding of the world.
+Free
+Distraction-free reading. No ads.
+Organize your knowledge with lists and highlights.
+Tell your story. Find your audience.
+Sign up for free
+Membership
+Access the best member-only stories.
+Support independent authors.
+Listen to audio narrations.
+Read offline.
+Join the Partner Program and earn for your writing.
+Try for $5/month
+AI
+Artificial Intelligence
+CEO
+Startup
+Business
+--
+Written by Gigalogy
+10 Followers
+Bridging the Gap Between Technology and User Experience. Empowering Businesses to Unlock the Full Potential of AI.
+Follow

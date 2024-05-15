@@ -1,0 +1,6 @@
+URL: https://api.recommender.gigalogy.com/v1/sandbox#/
+
+Title: Gigalogy Recommender - Swagger UI
+
+Content:
+

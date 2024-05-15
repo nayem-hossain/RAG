@@ -1,0 +1,51 @@
+URL: https://tutorial.gigalogy.com/tutorial/00_Setup_and_training/project_setup_from_ui/
+
+Title: Project setup - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Project setup
+Once the project is created, now it is time to setup the project.
+In the coming sections, we will guide you through various steps such as "data mapping" and "creating indexes" (found under the Environment Setup section), "integrating data" (explained in the Integration of Catalogue Information and User Behavior Data section), and "training your data" (in the Training Your Data section). These sections will cover you how to perform these actions by directly using our endpoints from the sandbox.
+In this section, we will show you how to complete all these steps directly through our platform UI.
+Project setup from UI
+Upload data
+After creating project, go inside the project. At the top, there will be four tabs DETAILS, SETTINGS, INSIGHTS, SETUP. Click and go to the SETUP. Here you will find a box to upload your data file. Currently we accept CSV files only. Select your CSV file and click upload.
+Mapping your data
+In the next page, you will see a suggested mapping done for your data. Gigalogy personalization engine relies on specific default keys to operate. To integrate your item catalogue with our solution, it's essential to map you data source keys (such as item name, item description, tags, ingredients, category, etc.) with keys of Gigalogy personalization engine. Our personalizer then can understand your data.
+You can update the suggested mapping as you find necessary. This can also be modified later. When satisfied, click continue to proceed to the next step
+Rank Setting
+In the Rank settings step, you can modify and set the settings for the rank training, which will impact the "trending items" recommendation. If you are not sure about this, we highly recommend to keep it as it is (Default settings). Click continue to proceed to the next step.
+Setup completion
+In the next page you will see the status of the project setup. If there is any issue, it should give you the reason and you will be asked to restart the process. Please contact us if you fail to resolve the issue at support@gigalogy.com.
+If all above steps are completed successfully, your project setup is done.
+Next go to the SETTINGS tab, and you will find the section "Train data". Hit the "Train" button for each (Item, image, rank) to train your data. This is recommended to do once when you first setup your project. After this, it will run automatically every 3 hours (Default setting is 3 hours, can be changed based on requirement).
+Below you will find the training history with their status. You can update the rank settings and mapper.
+If you want to re-upload your data, go to the DATASET tab again to re-upload. This will not replace your old data, only add new data.
+Previous
+Credentials
+Next
+Environment setup
+Made with Material for MkDocs

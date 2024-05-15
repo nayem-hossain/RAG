@@ -1,0 +1,60 @@
+URL: https://tutorial.gigalogy.com/tutorial/02_gpt_integration/gpt_project_setup/
+
+Title: GPT Project setup - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+MyGPT
+GPT Project setup
+GPT Integration
+GPT Feedback
+API Reference
+Release notes
+Glossary
+GPT Project setup
+Gigalogy,s GPT based solutions allows you to make your own GPT solutions, trained with your own data, customized according to your needs. Here are some basics to get you started. Find MyGPT related endpoints in our sandbox.
+Documents
+Documents are information that GPT will consider as a single piece of information, such as Address of Gigalogy, What is Gigalogy personalization, etc.
+Datasets
+A Dataset is a collection of documents in a single file. For instance, single dataset may contain documents with information such as Address of Gigalogy, What is Gigalogy personalization, What is Gigalogy's MyGPT.
+Profiles
+With each request sent to GPT endpoints POST /v1/gpt/ask and POST /v1/gpt/ask/vision, we include a parameter called gpt_profile_id. This parameter's value points to a GPT profile. GPT profiles hold information that tells the GPT how to process the information provided (query) and how to respond. To see more about what is inside a profile, check out the parameters and the example request body of the endpoint POST /v1/gpt/profiles.
+There are two types of profiles. One is for the /gpt/ask endpoint, which is a general profile for any model except gpt-4-vision-preview. The other is for the /gpt/ask/vision endpoint, for which we currently support only gpt-4-vision-preview as the model.
+Project setup
+Project setup for MyGPT involves preparing, uploading and training your data. Additionally, set up the required setting the parameters to suit your requirement.
+Dataset
+Upload Dataset
+Use the endpoint POST /v1/gpt/datasets to upload a dataset that will be used to train your customized GPT bot. Currently, we accept CSV and JSON format. You will find the required parameters and description in the sandbox in the link above.
+How to see uploaded datasets
+Once the dataset is uploaded, you can use /v1/gpt/datasets to see all your datasets of your project. The response will give you below details along with the datasets ids. This dataset_id will be required to edit, delete, train your data.
+yaml { "dataset_id": "a8bf8ddd-b5cb-4bea-a82b-4ac148f01c0a", "created_at": "2023-12-24T20:23:34.992063+09:00", "name": "NAME OF THE DATASET", "description": DESCRIPTION OF THE DATASET, "idx_column_name": "idx", "image_url_column": "images" }
+Delete dataset
+Use the endpoint DELETE /v1/gpt/datasets/{dataset_id} to delete a dataset or particular documents from a dataset. You can find the expected request body, with required parameters and values in our sandbox here
+Update Dataset
+To be updated
+Updating and deleting - Documents
+To be updated
+Training
+Use endpoint POST /v1/gpt/dataset/train to train your uploaded dataset. This endpoint will take the dataset id and image type. It is good practice to train only what is necessary to optimize the usage of resources.
+Profile
+Setup profile
+Use POST /v1/gpt/profiles to setup GPT profile. You can setup multiple profiles. However you will need to select one as the default profile in the next step.
+Here are some detail about "intro", "System" and "Model" parameters.
+Intro: This is detailed instruction for the bot on how to respond to a query. For example, if you are creating a customer support bot for an E-commerce site "AAA", this parameter could be: "Answer customer questions based on the catalog information and FAQ documents of our company. If a customer wants a product recommendation, ask up to three questions to understand their needs better, then make three recommendations and ask the customer if they like them or want different recommendations."
+System: This tells the bot about the persona it is supposed to adopt. For example, if you are creating a customer support bot for an E-commerce site "AAA", selling cosmetics, this parameter could be: "You are customer support for AAA, an expert on skincare and cosmetic products who values customer needs and provides the right product recommendations."
+Model: We support all GPT models of OpenAI, which you can select based on the needs and use cases. Please consider the purpose and the estimated token count when selecting the model, as this can significantly impact costs. You can learn more about OpenAI models from this page. This setting will impact the parameters search_max_token (tokens allocated for data sent to the model) and completion_token (tokens allocated for the reply). Note that intro, system, and query have token costs that are not included in the token size allocation. The selected model's CONTEXT WINDOW should cover the total token allocation. That is CONTEXT WINDOW ≥ search_max_token + completion_token + intro + system + query.
+You can use the use the endpoints in our sandbox under "MyGPT Profiles" to Check the profiles and update or delete them.
+Default profile setup
+Once you have setup the profile(s), decide one of the profiles that should be default and use our endpoint POST /v1/gpt/settings to set your default profile.
+with this, your GPT setup is completed.
+Previous
+Questionnaire
+Next
+GPT Integration
+Made with Material for MkDocs

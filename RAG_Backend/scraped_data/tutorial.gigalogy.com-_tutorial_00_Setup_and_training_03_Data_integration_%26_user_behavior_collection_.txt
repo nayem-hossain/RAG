@@ -1,0 +1,134 @@
+URL: https://tutorial.gigalogy.com/tutorial/00_Setup_and_training/03_Data_integration_%26_user_behavior_collection/
+
+Title: Integration of Catalogue information and user behavior data - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Integration of Catalogue information and user behavior data
+This tutorial will cover how to integrate your catalogue information into GAIP and how to set up user behavior tracking and integrate with GAIP.
+Catalogue information integration.
+Prerequisite: Mapping creation and the index creation is done.
+Info
+This step can also be done from our platform (GAIP). Refer here for detail.
+There are two ways to import your catalogue information into GAIP.
+Upload you catalogue information as a CSV or JSON file using endpoint POST /v1/item/save.
+Fetch data from your API (or any external API) using endpoint POST /v1/item/save/remote.
+Uploading data using a file
+For uploading the data using a CSV file or JSON file, please use the POST /v1/item/save endpoint. Simply upload the file and confirm the server response is success. Confirm the task was successful using the GET/v1/tasks/{task_id} endpoint.
+Info
+This will throw an error and task will fail, if the keys during the Mapping creation step does not match with the keys in the file, OR if the indices were not created succesfully.
+Fetch item from external API
+To fetch data from external API, use the POST /v1/item/save/remote endpoint. The key and value types and an example request body for the endpoint can be found here in our sandbox.
+After hitting either of the endpoint above to import your data into GAIP, you will get a task ID in the response. Use this task ID and hit the /v1/tasks/{task_id} endpoint to confirm the operation was successful. In case it fails, you can also find the details there. For API documentation, please refer <>
+Search Items in GAIP after import
+You can search items by passing list of item ids fromPOST /v1/items/search endpoint. This endpoint will return searched items with item details.
+It is recommended to use this endpoint to confirm that the item catalogue is successfully imported into your project.
+User behavior data collection integration
+GAIP can collect different user behavior related information to optimize the recommendation for the user. Types of data collected are listed below with their endpoints.
+Data type Endpoint
+Product browsing: When user browse products. /v1/items/browse or /v1/items/browse/client
+Product Purchase: When user purchase a product with its quantity. /v1/items/purchase or /v1/items/purchase/client
+Rating: When a user rates a product. /v1/items/rating or /v1/items/rating/client
+User: User information such as age, gender and other customized attributes depending on your website. /v1/users or /v1/users/client
+You will find these endpoints listed in our Sandbox under section "User Data Collection". Please check the required parameters, value types and example request bodies for all the endpoints there.
+There are 3 ways to integrate user behavior data collection with GAIP
+Google Tag Manager
+Server to server integration
+Client to server integration
+You can also bulk upload user behavior data from the past. For that, please refer to Import user behavior data section.
+Comparison of each approach.
+Approach GTM Server to Server Client to Server
+Description Use Google Tag Manager (GTM) to collect data (User behavior) from your website and send it to GAIP via endpoint. The data is captured in the backend server of your application and then sent to GAIP via endpoint. The data is directly sent from your front end (Client side) to GAIP via endpoint.
+Pros Easy to implement, Minimum coding required, Flexible configuration More secure, Data integrity, Controlled environment Real-time data, Less server dependency
+Cons Limited customization, need to have basic knowledge about GTM, Dependency on third-party service, Might not work for certain browsers and plugins like AdBlockers More complex to set up, potential latency, maintenance required Less secure, Potential for inconsistent data, dependency on client-side behavior
+Below we will show the implementation of each approach.
+BE ADVISED: The following is a general guideline, and it may vary across different websites, contingent upon the specific implementation of your website.
+Google Tag manager
+Prerequisite: Your website must have GTM setup. If you do not have GTM setup, you can easily do the setup by following the guidelines here.
+If you are not familiar with basic GTM concepts, such as Tags, Triggers and Variables, please familiarize yourself first with these concepts before proceeding with this approach. You can find more resources related to this here.
+Generating user ID
+In our sandbox, Notice that in the user data collection endpoints, every endpoint has a parameter called user_id, and member_id. These are vital to identify each user so that you can personalize their experience. user_id is generated by GAIP for each user of your site. The endpoint to generate and user_id is GET /v1/users/generate/id. You can generate the user_id using GTM using below code. This code can be used with every Tag, which checks if there is a user_id and creates one if there is none.
+js // Function to get or generate 'gaip_user_id' using a function expression var getGaipUser = function() { return new Promise(function(resolve, reject) { if (gaipUser !== null) { resolve(gaipUser); } else { var idHeaders = new Headers(); idHeaders.append("project-key", "{{ YOUR_PROJECT_KEY_HERE }}"); idHeaders.append("api-key", "{{ YOUR_API_KEY_HERE }}"); fetch("None/v1/users/generate/id", { headers: idHeaders }) .then(function(response) { return response.json(); }) .then(function(data) { localStorage.setItem('gaip_user_id', data.detail.response); resolve(data.detail.response); }) .catch(reject); } }); };
+member_id can be set by you depending on how your site identifies unique users such as user ID, phone number, email address etc.
+Collecting and sending user browsing data
+Set up a variable to capture the product name/title/ID, when the user goes a product details page or clicks on a product to enlarge it or open a pop-up etc.
+Set up a trigger so that the tag would fire when the user goes browses an item (Go to product detail page or quick view options etc.).
+Create a custom HTML Tag with the above trigger and variable and put the below code in the tag.
+Collecting and sending user purchase data
+Set up a variable to capture the all the purchase detail, when the user makes a purchase. This could be from the purchase confirmation page etc.
+Set up a trigger so that the tag would fire when the user make the purchase.
+Create a custom HTML Tag with the above trigger to send the information to endpoint POST /v1/purchase or POST /v1/purchase/client
+Collecting and sending user rating data
+Setup variables to capture the product name/title/ID and the rating, when the user rates an item positively or negatively. We can also consider an item is positively rated when user adds the item to wishlist.
+Set up a trigger for the tag to fire when the user rates a product.
+Create a custom HTML Tag with the above trigger and variables to send the information to the endpoint POST /v1/rating or POST /v1/rating/client
+Collecting and sending user data
+Setup variable to capture the user information.
+For this, the trigger could be setup up when the user logs or update their information.
+Create a custom HTML Tag with the above trigger and variables to send the information to the endpoint POST /v1/user or POST /v1/user/client
+Server to server integration
+For server to server integration, you will need to generate Project key and API as mentioned in the credentials section.
+User information
+The below request path, takes user information, such as name, age, gender, address and saves them in the gaip database.
+POST /v1/user
+Here is an example request body
+json { "user_id": "a0cc6beb-2909-459b-be55-62196af78ce4", "member_id": "df3456tg-2909-459b-be55-62196afedf85", "user_info": { "address": "string", "gender": "integer --> 1 for male or 2 for female or 3 for others", "age": 25, "user_type": [ { "key_name1": "value1_value2", "separator": "_" }, { "key_name2": "value3" } ] } } You can find the sample code for implementation here
+Product browse
+You can use the below endpoint to capture user browsing information and save them in GAIP database js POST /v1/items/browse
+It takes user_id and item_id as required parameters.
+Here is an example value of the request body JSON { "user_id": "a0cc6beb-2909-459b-be55-62196af78ce4", "member_id": "df3456tg-2909-459b-be55-62196afedf85", "item_id": "1000764491" }
+You can find sample code here
+Product purchase
+You can use the below endpoint to capture user's product purchase information and save them in GAIP database
+POST /v1/purchase It takes user_id, item_list which includes item_id, price, quantity for a specific item as required parameters.
+Here is an example request body json { "user_id": "a0cc6beb-2909-459b-be55-62196af78ce4", "member_id": "df3456tg-2909-459b-be55-62196afedf85", "item_list": [ { "item_id": "1000757666", "price": 5000, "quantity": 1 }, { "item_id": "1000764491", "price": 400, "quantity": 7 } ] }
+You a find sample code for this implementation here
+Product rating
+You can use the below endpoint to capture user's product rating information and save them in GAIP database
+POST /v1/rating
+It takes user_id, item_id, and rating for the specific item as required parameters.
+Here is a sample request body
+json { "user_id": "a0cc6beb-2909-459b-be55-62196af78ce4", "member_id": "df3456tg-2909-459b-be55-62196afedf85", "item_id": "1000764491", "rating": "1" }
+You can find the sample code for this implementation here
+If you want to save your data with bulk upload you can use above-mentioned endpoint.
+Client to server integration
+For client to server integration, you will need to generate client key as described in the Credentials sections. Once the client key is ready, you can directly send the request from your client side to GAIP, using the client key provided.
+Note that while generating client key, you can add whitelisted domains, which whitelists the request origin. This is recommended to enhance security.
+The rest of the implementation method is same as server to server integration.
+Import user behavior data
+Similar to data integration, all 4 kinds of user information (browse, purchase, rating, user) can be bulk uploaded. This could be useful if you already have this information from the past and want to import it into GAIP.
+To import user behavior and user information in bulk, first you need to create mapper to match the keys with GAIP.
+To create the mapper, the endpoints with the example request bodies can be found here in the gigalogy recommender page. You can also find the sample codes for mapper creation here in the API documentation page
+Next we will use the below 4 endpoints to upload each category of data in bulk
+Request path for product browsing history: POST /v1/items/browse/save
+Request path for purchase history: POST /v1/items/purchase/save
+Request path for rating history: POST /v1/items/rating/save
+Request path to upload user information in bulk: POST /v1/users/save
+You can find these endpoints with the example request bodies here. The sample code can be found here in the API documentation page
+Previous
+Environment setup
+Next
+Training your data
+Made with Material for MkDocs

@@ -1,0 +1,8 @@
+ipython
+google-generativeai
+qdrant-client
+fastapi
+uvicorn[standard]
+beautifulsoup4
+numpy
+jinja2

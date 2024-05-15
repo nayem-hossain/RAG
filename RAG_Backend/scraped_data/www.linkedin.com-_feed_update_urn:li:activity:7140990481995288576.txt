@@ -1,0 +1,257 @@
+URL: https://www.linkedin.com/feed/update/urn:li:activity:7140990481995288576
+
+Title: Gigalogy on LinkedIn: #event #insights #manufacturing #ai #artificialintelligence #gpt #prompts…
+
+Content:
+LinkedIn
+Articles
+People
+Learning
+Jobs
+Join now
+Sign in
+Gigalogy’s Post
+Gigalogy
+1,291 followers
+4mo
+Just wrapped up an insightful event with our partner Cross Compass, Ltd., exploring the frontiers of "Generative AI for the Manufacturing Industry." 
+Here's a glimpse into the highlights and key takeaways of yesterday's talk💡
+
+- Navigating the GPT Bot Development Landscape: We have explored the difficulties in developing GPT bots, focusing on fine-tuning and data preprocessing, and how Gigalogy's expertise provides invaluable support in these areas. It was enlightening to see the practical solutions that Gigalogy offers for these complex processes.
+
+- MyGPT's Dual Processing Capability: attendees discovered the advanced functionality of Gigalogy's MyGPT, which uniquely processes both image and text prompts concurrently. 
+This dual capability allows MyGPT to understand and extract information from images while responding to text prompts, enhancing the depth and accuracy of its intelligence gathering and user interactions.
+
+- Application in the Manufacturing Industry: We explored how this cutting-edge technology can be applied in the manufacturing industry, specifically to enhance quality control processes. By integrating these tools, we can significantly improve our ability to identify defects and pinpoint faulty products, thereby increasing efficiency and ensuring product reliability.
+
+We are thankful for the presence of our fellow innovation enthusiasts who joined us yesterday evening.
+Let's continue shaping the future of AI together! 
+
+#event #insights #manufacturing #ai #artificialintelligence #gpt #prompts #futureofai #innovation #manufacturingindustry #qualitycontrol #processimprovement #processautomation 
+47
+Like
+Comment
+Share
+To view or add a comment, sign in
+More Relevant Posts
+SingleStore
+33,123 followers
+5mo
+📆 Join us tomorrow, Nov 20 for this webinar "How to Chat with Images Data Using New GPT-4 Vision API"
+
+We delve into how GPT-4's new Vision API transforms the way we analyze and interact with image data. There will be a live demo and code-sharing session too!
+
+Register: https://bit.ly/40Gpbvv
+
+#AI #GenAI #ChatGPT #HowTo #APIs
+How to Chat with Images Data Using New GPT-4 Vision API
+events.singlestore.com
+11
+Like
+Comment
+Share
+To view or add a comment, sign in
+TestGuild
+5,641 followers
+12mo
+🚀 Ready to revolutionize your software testing approach with cutting-edge technologies? 
+
+Join us as we chat with Nikita Fedorov, the trailblazing founder of Qase. In this episode, we explore the latest advancements in AI and their impact on software testing. 
+
+Discover how generative AI is reshaping the landscape of test case creation, and learn how Qase's platform integrates manual and automated testing with powerful analytics for enhanced efficiency and accuracy. 
+
+Gain insights into the rise of TestOps and the crucial role of human feedback in achieving optimal testing outcomes. 
+
+Tune in now! 
+👇👇👇
+ 
+
+        
+…see more
+Play Video
+11
+Like
+Comment
+Share
+To view or add a comment, sign in
+Shahebaz Mohammad
+Senior Applied ML Engineer | Kaggle Grandmaster 🥇
+11mo Edited
+🎉 Exciting news: I'm speaking at DataHack Summit 2023! 🎉
+
+Venture into the world of AI with me at leading futuristic AI conference as we unlock endless possibilities in artificial intelligence. 
+
+My session will be centered on : "Building AutoGPT Agents With LangChain" ⛓️
+
+In this session, I'll delve into how you can leverage #OpenAI's #gpt4  and other open-source models to construct agents capable of performing innovative tasks, planning meals, and even serving as an educational guide!
+
+One compelling reason to secure your tickets - not only will I be sharing the techniques involved, but also providing a thorough approach to deploying services and applications developed with LangChain. Why hesitate?
+
+Let's mold the future hand-in-hand at DataHack Summit 2023!
+
+Secure your spot now: https://lnkd.in/gi-kTwPZ
+
+#DataHackSummit2023 #AIConference #YourAIJourney #HackTheFuture
+71
+4 Comments
+Like
+Comment
+Share
+To view or add a comment, sign in
+AI Product Creators
+1,051 followers
+3mo
+Unlocking AI's full potential just became a reality! - Dhaval Bhatt🚀 
+
+Introducing OLMo 2 by A12: a groundbreaking 7B parameter AI model that sets a new standard in creativity and productivity, leaving others like Llama 2 in the dust. 🌌 Unlike anything before, OLMo is fully open—data, code, and model weights are yours to explore with around 500 checkpoints and a bias-free framework. 🛠️ This isn't just about understanding AI; it's about actively shaping our future. And the best part? It's all under the Apache 2.0 license, welcoming everyone into a fully collaborative space. 🌍 Ready to revolutionize your AI journey with OLMo? Dive into the future of building with AI - link in bio for more!     🌟
+…see more
+Play Video
+3
+2 Comments
+Like
+Comment
+Share
+To view or add a comment, sign in
+Glenn Lai
+Building Fr8labs | Logistics Tech | Digital Commerce | Growth & Strategy
+3mo
+Generative AI is all the hype? We agree. But we have cautiously experimented this in Fr8labs for LogTech, and are amazed by what we can achieve and what this brings to the table for forwarders in terms of Growth Potential.
+
+Didn't have time to watch our video? In summary, with natural language voice inputs, you can instruct our platform through an external chat medium to do all sorts of actions you would typically type into your system of record (like create a quotation, booking or create a shipment) or instruct your own internal operations teams to follow up on. Imagine the force multiplier effect this can have to your teams as they now switch their focus on work that truly matters.
+
+How do you feel about AI in freight forwarding operations - excited or apprehensive? 
+
+Feel free to also sign up for our wait list via the following link:  
+
+Week 1 of 26 Weekly Posts Challenge ().
+
+
+         
+…see more
+Play Video
+75
+1 Comment
+Like
+Comment
+Share
+To view or add a comment, sign in
+Atometrix
+60 followers
+5mo
+Hello AI Aficionados! 🤓
+
+We've got a buzzworthy byte-size idea that's going to flip your dataset creation process on its head! Imagine a world where you can create surrogate datasets that are representative of the full thing, yet diverse, without draining your precious computational resources. No, it's not sci-fi. It's science-fact! 😎
+
+Through the magic of generative diffusion techniques, our boffin buddies have found a way to simplify and enhance dataset distillation. This means you get to say "Ta-ta" to the era of boring, limited datasets and "Hello" to a galaxy of data possibilities. 🎉 Now, isn't that worth a celebratory robot dance? *does the robot*
+
+Ready to revolutionise your dataset creation? Want to know what makes our byte-size world spin effortlessly? Well, allow me to leave you this tantalising breadcrumb: [Link](https://lnkd.in/guvmnezQ) 🥖
+
+And remember, that's just the amuse-bouche! For the full 5-course menu of byte-size knowledge nuggets delivered piping hot from the Atometrix kitchen, hit the subscribe button at https://lnkd.in/djpHz2pf. 
+
+Dig in, and let's cook up a data storm together! 
+
+#Atometrix #AI #GenerativeDiffusion #Dataset #Innovation #DataScience #Revolution #GenAI #OpenAI #ChatGPT #TechNews #FutureTech
+Atometrix - ByteSize
+atometrix.beehiiv.com
+Like
+Comment
+Share
+To view or add a comment, sign in
+Adam Elzaim
+Product & Project Engineer | 👨🎓ECE Paris |📍South Korea
+1mo
+🌟 Unleash Your Creativity with GenNomis - Alpha Testers Wanted! 🌟
+
+We are excited to invite you to the alpha launch of GenNomis, our groundbreaking AI Image Generator. GenNomis is not just a tool; it's your next creative partner, designed to bring your imagination to life through the power of AI. Dive into a world where creativity knows no bounds, and every idea can be visualized.
+
+Why Join the GenNomis Alpha?
+
+-First Access: Be among the elite first users to explore GenNomis’s full potential.
+-Creative Freedom: Generate images freely with our state-of-the-art AI models tailored to your every need.
+-Shape the Future: Your insights will play a pivotal role in refining GenNomis for our beta release.
+
+Your Feedback is Crucial
+We're on a mission to make GenNomis the best AI image generator on the market, and we need your help:
+
+-After creating with GenNomis, please share your thoughts through the survey included on our website. Every piece of feedback will guide our improvements.
+
+-Need a walkthrough? Our Tutorial Page is your go-to guide for mastering all the features GenNomis has to offer.
+
+👉 Start Creating Now: https://www.gennomis.com/
+
+Join us on this exciting journey to redefine digital creativity with GenNomis. Your imagination, powered by our technology, will set a new standard for what's possible in AI-driven art.
+#GenNomis #AIImageGenerator #AlphaTestersNeeded #CreativityUnleashed #AIForCreativity #InnovateWithAI #DigitalArtRevolution
+GenNomis - Free AI-Powered Image Generation
+gennomis.com
+3
+Like
+Comment
+Share
+To view or add a comment, sign in
+Sesh
+102 followers
+1mo
+We are thrilled to share pioneering advancements from Groq, showcasing the remarkable capabilities of Gemma 7B on their LPU™ Inference Engine. This leap forward offers unprecedented speed and economic efficiency in AI endeavors, achieving approximately 814 tokens per second at the cost of merely $0.10 USD. Furthermore, Groq's enhancement of their API with function calling marks a significant step towards more structured and predictable AI interactions, facilitating a smoother integration process for developers. Stay connected for more insights into driving innovation in the AI sphere. #ArtificialIntelligence #Innovation #TechTrends
+
+Remember this was made with AI (I automate it wanna learn DM me) and any advice finance or anything comes from an AI not from me so take the advice under ur own risk dude.
+Like
+Comment
+Share
+To view or add a comment, sign in
+Kord Campbell
+Founder and Developer @MittaAI | Prompt Template Engineering, MLOps, Search, RAG, LLM Feeds, Generative AI Pipelines (DAGs), and crypto commentary.
+3mo
+💫 Exciting news! I just released two new processors for MittaAI. The `jump_task` and `halt_task` node types will allow for greater control over the flow of our pipeline process. By using Jinja2, these processors can be used inside templates to control the pipeline flow. This means that an LLM can now control the pipeline flows when used with an `aidict` or `aistruct` processor.  I'll let that one sink in before talking more about it... #DAG
+
+⌨ The next step is implementing a `call_task` processor, which will allow for a callback to be made directly to a given node in a pipeline. This will enable nodes that use callbacks internally (such as required in some AI services) to callback to the next node in the pipeline, allowing it to continue processing the same job without having to use separate pipelines. 
+
+🚀 My focus on building things that get people using the product in a low friction way has led me to these new developments. As always, I strive to treat myself as the first customer and continue to build features that improve the product. Thanks to everyone who reads these and supports me! 🙏  #AI #pipeline #development 
+MittaAI /crawl - AI-Powered Tech News Summarizer
+news.mitta.ai
+1
+Like
+Comment
+Share
+To view or add a comment, sign in
+Jonathan Yarkoni
+Ex-Google Senior AI/ML SE | AI Consulting | LLM specialist | Generative AI Expert | Startup advisor | Angel investor | Lecturer
+3mo
+A new recording is out! Check out the latest tips and tricks for developing Gen AI apps at companies such as JFrog, Wix, SDR-GPT.
+
+Big thanks to , ,  
+
+
+
+  
+…see more
+Gen AI Journey to Production - Expert Panel
+https://www.youtube.com/
+29
+2 Comments
+Like
+Comment
+Share
+To view or add a comment, sign in
+1,291 followers
+View Profile Follow
+Explore topics
+Sales
+Marketing
+Business Administration
+HR Management
+Content Management
+Engineering
+Soft Skills
+See All
+LinkedIn
+© 2024
+About
+Accessibility
+User Agreement
+Privacy Policy
+Cookie Policy
+Copyright Policy
+Brand Policy
+Guest Controls
+Community Guidelines
+Language

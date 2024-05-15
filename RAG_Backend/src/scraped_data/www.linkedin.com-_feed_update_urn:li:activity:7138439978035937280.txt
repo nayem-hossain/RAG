@@ -1,0 +1,264 @@
+URL: https://www.linkedin.com/feed/update/urn:li:activity:7138439978035937280
+
+Title: Gigalogy on LinkedIn: #ai #generativeai #visionary #insights #artificialintelligence #llms…
+
+Content:
+LinkedIn
+Articles
+People
+Learning
+Jobs
+Join now
+Sign in
+Gigalogy’s Post
+Gigalogy
+1,291 followers
+5mo
+We are thrilled to announce that we will be co-hosting an exclusive event with our partner, Cross Compass, Ltd., at our office on Wednesday, December 13th. 
+
+The event will focus on the theme of "Generative AI for Manufacturing Industry."
+
+Recently, there has been significant progress in the implementation of Large Language Models (LLMs) that have garnered attention. 
+We aim to delve into the possibilities of Gigalogy by leveraging the synergy between our in-house GPT development environment, designed for effortless tailoring of generative AI with cutting-edge language models and Cross Compass, Ltd.’s AI solutions, specifically crafted for the manufacturing sector.
+
+🤝 About our partnership:
+
+Since September, we have established a pioneering partnership with Cross Compass, Ltd., focusing on delivering sophisticated machine-learning platforms and nurturing exceptional AI professionals.
+Through our collaborative effort, leveraging our combined strengths, our goal is to establish a comprehensive, integrated solution for the development and practical implementation of AI (Artificial Intelligence) technologies.
+
+Together, we have founded the Pivotal AI Institute (PAI), an educational center committed to developing the next generation of AI professionals. Our focus is on empowering these emerging talents to pioneer and shape the standards of Artificial Intelligence adoption across diverse industries.
+
+We are eagerly anticipating the arrival of fellow innovation enthusiasts and look forward to exchanging our visionary ideas and insights! 💡
+
+#ai #generativeai #visionary #insights #artificialintelligence #llms #manufacturing #partnership #innovation 
+20
+Like
+Comment
+Share
+To view or add a comment, sign in
+More Relevant Posts
+Ganesh Padmanabhan
+CEO Autonomize AI | Host, Stories in AI
+9mo
+🧠 Introducing an Insightful New Paper on the Future of AI! 🚀 by two folks I respect a lot Gary Marcus and Douglas Lenat | They understand the landscape, the history of how we got here, are realists and optimists at the same time. 
+
+Generative AI, including large language models (LLMs), is the current trend in AI. And it's not perfect – they're often unpredictable, uninterpretable, and lack in reasoning abilities.
+
+This groundbreaking paper lays out 16 key desires for future AI, and an alternative approach that could remedy these shortcomings:
+
+✅ Using explicit knowledge and rules
+✅ Enabling an inference engine for logical deductions
+✅ Producing trustworthy and interpretable results
+
+However, there's a challenge:  How to make this engine fast without losing expressive logic? 🤔 Enter the CYC project! It has developed ways to overcome this tradeoff, enabling real-time reasoning in higher-order logic.
+
+The paper advocates for a hybridized approach, combining the strengths of LLMs and more formal methodologies. This new direction could be a game-changer in our journey towards more reliable and robust AI systems.
+
+Paper: https://lnkd.in/gw-J_c8E 
+
+💼 Explore the paper to learn more about this path to realizing the dream of trustworthy general AI!
+
+#AI #CycProject #FutureOfAI #HybridApproach #generativeai 
+25
+Like
+Comment
+Share
+To view or add a comment, sign in
+GenAI podcast
+399 followers
+6d
+In this episode, Dale and Alan discuss what is happening at the ACOSTE conference and the growing interest in AI in project controls. They explore the importance of structured data and automation in utilizing AI effectively. They also touch on the limitations of large language models in handling numerical calculations and the need for better planning capabilities in AI agents. The episode ends with a teaser about a demo that GraphGen has developed for generating schedules from text.
+
+Takeaways
+🍕There is a growing interest in AI in project controls, particularly in the UK.
+🍕Structured data and automation are crucial for effectively utilizing AI in project controls.
+🍕Large language models have limitations in handling numerical calculations.
+🍕Improving the planning capabilities of AI agents is a key focus for future development.
+🍕GraphGen has developed a demo for generating schedules from text.
+
+Chapters
+00:00 Introduction and Reflection on the ACOST-E Conference
+01:25 The Importance of Structured Data and Automation
+07:26 The Need for Better Planning Capabilities in AI Agents
+
+Subscribe on YouTube and follow us on Spotify:
+📺YouTube: 
+🎧Spotify: 
+🤝Connect with us on LinkedIn:  
+
+      
+…see more
+16
+2 Comments
+Like
+Comment
+Share
+To view or add a comment, sign in
+Tanat Tonguthaisri, CISSP®
+enabling digital services for Student Loan related activities while maintaining the highest security standard, the most compliant personal data protection and customer-centric data-driven innovation.
+5mo
+📣 Exciting research update! 🌐📚
+
+Announcing a new blog post that delves into the world of AI and its impact on society. We evaluate and enhance the value judgments made by Large Language Models (LLMs) in our study, "Evaluating and Improving Value Judgments in AI: A Scenario-Based Study on Large Language Models' Depiction of Social Conventions." 
+
+As AI technologies continue to advance, it becomes crucial to ensure that the output they produce aligns with human needs. In this research, we explore how contemporary AI services meet user expectations and delve into LLMs' depiction of social conventions. 
+
+Findings from our query experiment, which compared LLMs' value judgments with public data, provide interesting insights. We propose a model of decision-making in value-conflicting scenarios, which may shape future machine value judgments. Our approach advocates for using AI as a tool to explore different perspectives and remote worlds.
+
+Join us on this exciting journey towards safe and accurate value judgments in AI. Read the full blog post here: https://bit.ly/3R49yej 📖💡
+
+Let's empower ourselves with a critical perspective on AI and its role in shaping our environment. We hope this study inspires anyone, regardless of their capacity, to effectively receive value judgment-based outputs. #AIresearch #ValueJudgments #LLMs
+Like
+Comment
+Share
+To view or add a comment, sign in
+TCG Process
+4,583 followers
+5mo
+In a world that's abuzz with the incredible potential of Large Language Models (LLMs) and Generative AI, it's crucial for organizations to understand the diverse landscape to enhance document processing automation outcomes.
+Here's what you'll discover in our latest guide 📄:
+📌 Uncover the areas where the newest technologies can bring tangible advantages to your operations
+🤖 Explore different types of AI models, considerations, and deployment options
+🔎 Learn what Explainable AI is and why we feel it will be increasingly important
+🛠 Understand the critical role of process orchestration
+
+Download Now >> https://lnkd.in/eysPQ8NS
+
+#AI #DocumentProcessing #ExplainableAI #ProcessOrchestration
+What AI advancements mean for your business processes
+tcgprocess.com
+11
+Like
+Comment
+Share
+To view or add a comment, sign in
+Market Logic Software
+10,158 followers
+4mo
+💡📚 We Market Logicians love to set some time aside on weekends for learning and deepening our reading! If you're with us, and you are also highly fascinated by the topic of innovation and AI technology in enterprises, consider reading this article by our Co-Founder, Chief Innovation & Product Officer Olaf Lenzmann. 
+
+🤖  Olaf takes a close look at Retrieval Augmented Generation (RAG): the transformative technology at the foundation of our  DeepSights™ generative AI solution. It is used for dynamically infusing external information into large language model (LLMs) for generative tasks, such as question answering. Want to know more? Jump in ⬇️
+https://bit.ly/47VtlCs
+
+#AI #EnterpriseInsights #FutureOfWork #EmergingTechnologies #innovaion and #GenerativeAI.
+4
+Like
+Comment
+Share
+To view or add a comment, sign in
+Effyis Group
+11,076 followers
+11mo
+#Effyis #AIExplainedByAI #EffyisDataLab #AI #EdTech
+
+🚀 Kicking off an exciting series at Effyis Data Lab – "AI Explained by AI" 🚀 
+
+Today, we unveil our AI-crafted educational video on Large Language Models (LLMs). With a firm commitment to staying ahead of AI advancements, our talented team has utilized cutting-edge generative AI technologies to deliver this content.
+In this video, our AI-agent delves into the intricacies of LLMs, showcasing their potential and discussing the ethical considerations that accompany their development.
+This initiative underscores our commitment to knowledge sharing, cutting-edge technology and ethical AI development.
+Stay tuned and follow us for more AI insights.
+…see more
+32
+Like
+Comment
+Share
+To view or add a comment, sign in
+Temus
+29,123 followers
+11mo
+Generative AI has the power to revolutionise how we live and work, and we're just scratching the surface! In the latest article by Hardeep Arora, Director of Data & AI, Temus, we delve into the transformative potential of Large Language Models (LLMs) like GPT4 and Claude. From seamless human-machine communication to personalised coaching experiences, LLMs are reshaping the future of data analytics.
+
+Read the full article to explore how generative AI is unlocking new possibilities: https://lnkd.in/g4rDh_Nw
+
+#GenerativeAI #ArtificialIntelligence #DataAnalytics #FutureOfWork #Innovation
+62
+Like
+Comment
+Share
+To view or add a comment, sign in
+TechChilli
+409 followers
+2mo
+🚀 Introducing Anthropic Claude 3: The Next Leap in AI Technology! 🚀
+
+We're thrilled to share the latest breakthrough in AI - Claude 3 by Anthropic. This cutting-edge language model is a game-changer, featuring large models with significantly enhanced capabilities. From deep analysis and precise forecasting to creating rich, nuanced content and generating code, Claude 3 is set to revolutionize how we interact with AI. 🤖💡
+
+But that's not all! Claude 3 excels in conversing across a multitude of non-English languages, making it a truly global AI tool. Its versatility and power are unmatched, offering solutions for a wide range of applications. 🌍🗣️
+
+For detailed insights on Claude 3, including pricing, availability, and its array of groundbreaking features, check out our comprehensive article. Discover how Claude 3 can empower your projects and drive innovation forward.
+Don't miss out on the future of AI. Explore the capabilities of Anthropic Claude 3 today!
+
+See here - https://lnkd.in/gDcnSFTv
+
+#AnthropicClaude3 #AILanguageModel #InnovationInAI #FutureOfTech 📈🔍
+1
+Like
+Comment
+Share
+To view or add a comment, sign in
+Masoud Nikravesh
+Entrepreneur-Technologist | Artificial Intelligence | National AI Strategy
+4mo Edited
+ 🚀 Excited to Announce: AiMagine GPT Launch! 🚀
+  
+  
+ AiMagine GPT, a unique GPT mirroring the insights and perspectives of Dr. Nikravesh. This tool is not just an AI - it's a fusion of Dr. Nikravesh's thoughts and insights on AI's societal impact, AGI's potential, and the future of human-AI interaction.
+  
+ 🤖 What’s Special?
+  
+- Tailored to reflect Dr. Nikravesh's extensive research in AI.
+- A focus on social-ethical AI, educational systems, and future job markets.
+- Engaging in personalized, insightful dialogues on AI's role in our future.
+ 
+Join me in exploring this innovative AGI-GPT, where technology meets human intellect to inspire and lead conversations in AGI era.
+
+ Link to the AiMagine GPT: https://lnkd.in/gEzew__9
+
+ Link to the Author " Dr. Masoud Nikravesh" website: https://lnkd.in/gSgGaeCj  
+
+ #AIInnovation #DrNikraveshAiMagine #ArtificialIntelligence #FutureOfTech
+1
+Like
+Comment
+Share
+To view or add a comment, sign in
+Deji O.
+Certified DevOps Generalist, Accredited Certified Scrum Trainer, Fintech Business Leader, Digital Product Management, Operations & Revenue,
+3mo
+My Prediction - Artificial Intelligence in 2024:
+
+In 2024, the spotlight in the AI landscape is shifting from the ascent of Generative AI (GenAI) to a heightened focus on addressing tangible business challenges. My key predictions for the year revolve around the continued impact of Large Language Models (LLMs) on technology, the metamorphosis of data teams into entities resembling software teams, and the convergence of engineering and data practices. Additionally, the rising significance of Retrieval Augmented Generation (RAG) is poised to play a crucial role in enhancing AI products.
+
+A prominent trend in 2024 will be the operationalization of enterprise-ready AI products, emphasizing the creation of valuable solutions rather than superficial integration for display purposes. 
+
+Deji O.
+#GenAIInnovation #DataTransformation #TechTrends2024
+#FutureOfWorkAI #RAGinAI #EnterpriseAI #TopTechInsights #InnovateWithAI #TechEvolution
+3
+Like
+Comment
+Share
+To view or add a comment, sign in
+1,291 followers
+View Profile Follow
+Explore topics
+Sales
+Marketing
+Business Administration
+HR Management
+Content Management
+Engineering
+Soft Skills
+See All
+LinkedIn
+© 2024
+About
+Accessibility
+User Agreement
+Privacy Policy
+Cookie Policy
+Copyright Policy
+Brand Policy
+Guest Controls
+Community Guidelines
+Language

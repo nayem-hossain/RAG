@@ -1,0 +1,30 @@
+URL: https://tutorial.gigalogy.com/tutorial/02_gpt_integration/gpt_feedbacks/
+
+Title: GPT Feedback - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+MyGPT
+GPT Project setup
+GPT Integration
+GPT Feedback
+API Reference
+Release notes
+Glossary
+GPT Feedback
+After establishing your GPT project and engaging with your bot, you may want to provide response on the dialogue quality.
+Providing Feedback via API
+To facilitate this, the endpoint PUT /v1/gpt/conversations would be of use. This endpoint allows you to designate specific conversations through their IDs, assign either positive or negative feedback, and optionally include a message conveying your review details. Such feedback is instrumental for refining the model's training and future results optimization.
+Sharing Feedback via the User Interface
+Under your GPT project's insight tab, you can see the history of your conversations in the the "GPT-Flow History" table. From the "Training data" column, you can edit the query, response and provide feedback. You can also select here which data should be added for future training and under which dataset.
+Previous
+GPT Integration
+Next
+API Reference
+Made with Material for MkDocs

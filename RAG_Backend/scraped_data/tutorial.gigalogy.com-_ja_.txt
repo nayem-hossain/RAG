@@ -1,0 +1,17 @@
+URL: https://tutorial.gigalogy.com/ja/
+
+Title: Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+404 - Not found
+Made with Material for MkDocs

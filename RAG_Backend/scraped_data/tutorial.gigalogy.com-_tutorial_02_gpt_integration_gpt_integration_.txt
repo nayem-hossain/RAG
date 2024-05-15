@@ -1,0 +1,37 @@
+URL: https://tutorial.gigalogy.com/tutorial/02_gpt_integration/gpt_integration/
+
+Title: GPT Integration - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+MyGPT
+GPT Project setup
+GPT Integration
+GPT Feedback
+API Reference
+Release notes
+Glossary
+GPT Integration
+After preparing, uploading and training your data, now you are ready to interact with your bot, by asking it question with texts and images via our endpoints.
+Asking question to the bot
+To send a text only question/query to GPT, use the endpoint POST /v1/gpt/ask. Find details of the required parameters with explanation and an example request body in our sandbox under "MyGPT"
+In the response, you will get the response to the query, along with some other information related, such as the conversation_id, tokens, etc.
+For query with image, use the endpoint POST /v1/gpt/ask/vision. There is one additional parameter here, to add the image file. This endpoint will take both the image and the query and respond based on both input. Here you can only use gpt-4-vision-preview model.
+Note that if you do not pass any gpt_profile_id, it will use the default profile that was set during the setup.
+Checking conversation history
+There are two ways to check conversation history 1. Using API endpoint 2. From the GAIP UI.
+Using endpoint
+Using our endpoint GET /v1/gpt/conversations, you can check conversation history of your project, for a specific date range. By default, (if no time period is specified), this endpoint will give the conversation history for last 7 days. If you want to see the response detail of any particular conversation, you can use your endpoint GET /v1/gpt/conversations/{conversation_id}. This endpoint will take the conversation ID and will give the detail of that particular conversation.
+From the GAIP UI
+In our platform, navigate to your project's insight page. Here you will find "GPT-Flow History" table. This will show all the conversation during the time range selected above. You can filter this table with user id, query, feedback. You can also see the details of each conversation by clicking on the details icon at the right. To download the history table, use the download button at the top right of the table. This will download the table as CSV. Note that the downloaded file will only contain the information as it is on the table, with the date and other filters applied.
+Previous
+GPT Project setup
+Next
+GPT Feedback
+Made with Material for MkDocs

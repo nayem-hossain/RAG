@@ -1,0 +1,38 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/purchased_together/
+
+Title: Recommend items purchase together - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Recommend items purchase together
+This endpoint considers the items that are frequently purchased together and recommend those items for particular products. The endpoint, along with other parameters, takes item_id as an input, and in response, gives items that are usually purchased together with the given item.
+Request path for this solution is: POST /v1/items/purchased/together
+You can find the required parameters with their description and an example request body here in our sandbox.
+You can find sample code for implementation here in our API documentation.
+Previous
+Recommend similar items
+Next
+Dynamic Pricing
+Made with Material for MkDocs

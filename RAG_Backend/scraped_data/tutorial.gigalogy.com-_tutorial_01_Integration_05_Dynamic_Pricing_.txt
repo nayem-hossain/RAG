@@ -1,0 +1,41 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/05_Dynamic_Pricing/
+
+Title: Dynamic Pricing - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Dynamic Pricing
+Dynamic pricing is a pricing strategy in which the cost of a product or service is adjusted in real-time based on the popularity of the product.
+You can maximize revenue and profit by finding the optimal price point that customers are willing to pay.
+The lowest price is always the given price.
+Info
+If you provided the catalogue information is also shared, a customized dynamic pricing solution can be designed. Please contact in this regard.
+This solution have to be setup while setting up the personalize search engine.
+Please find the boolean value dynamic pricing in the request body. When you provide the value "True," this solution will display a dynamic price to the user.
+Previous
+Recommend items purchase together
+Next
+Questionnaire
+Made with Material for MkDocs

@@ -1,0 +1,66 @@
+URL: https://medium.com/@gigalogy/introduction-to-ai-driven-personalized-search-engine-91af39a933af
+
+Title: Introduction to AI-driven Personalized Search Engine | by Gigalogy | Medium
+
+Content:
+Open in app
+Sign up
+Sign in
+Write
+Introduction to AI-driven Personalized Search Engine
+Gigalogy
+·
+Follow
+4 min read
+·
+Nov 9, 2022
+--
+Personalized Search Engine
+Search engine makes it easy for users to find products and information relevant to their needs. Your application must have a search tool if you want to enhance the user’s experience and make the journey more enjoyable.
+At Gigalogy, we developed a personalized search engine solution, that combines search queries with user behavior, preferences and finds the most relevant result for each user. Imagine you have an E-Commerce website and every time a user search with specific criteria, your search engine responds with the same results for everyone. 72% of users want their online experience to be personalized thanks to big tech companies for providing personalized experience in every aspect of our journey on the internet. If your website does not have the same level of personalized experience with time you will lose users, which will slow down your growth and leads to revenue loss. In 2022, personalization is no longer something nice to have. It is becoming a must-have feature in your user journey. Today, we will explain how our personalized search engine works, what are the key features and how you could be benefitted from it.
+How Personalized search works?
+A high level diagram of how personalized search works
+Our personalized search engine has two major components.
+Full-text search
+Personalization based on user behavior, preferences
+Full-text search finds the most relevant results based on search criteria. Combining that with user behavior and preferences, our search engine ensures the most relevant search results for each individual on your website.
+Now let’s take a look at some of the key features of our personalized search engine.
+Full-Text Search
+Full-text search performs linguistic searches against documents. It includes single or multiple words or phrases and returns similar items containing the words. This feature allows users to find the product without knowing the correct label.
+Multiple-keyword search
+One of the most unique feature of our personalized search engine is multiple-keyword search. You can add more than one keyword at a time. When you have a million items in your store, there is a high chance that the item user might like the most is hidden deep among other items. Sometimes it is also very difficult to express our need with a single keyword. Most of the time, users are unaware of the item’s category and the label, even the item’s existence. Multiple keyword search allows the user to search items without knowing their label, tag, and category.
+Nearby search
+Nearby search allows users to find items in a certain radius from a specific item. This feature helps users narrow down the search results and recommendations. Users can pass an item id, radius (from, to), and receive the most relevant items in that range.
+Location Based Search
+Weight Keys
+This feature allows you to assign dynamic weight to different data points. It defines how much importance you want to give to specific keys in your data. You also have the preference to choose in which key you want to put weights. You can adjust them according to your business need and importance.
+User Based similarity
+From user attributes and behavior, the core engine finds similar users and looks into what they like, and considers those information while finding the most relevant result for each user.
+User-based similarity
+You can add multiple categories and flags according to your data. If you have user data, it can generate results considering the type of the user. You can boost the items recommended to the user with a specific gender, age, and preference.
+Item-based similarity
+Item-based similarity enhances your search result so you can explore more items with a similar taste you have experienced before. Our search engine considers user behavior data to find the most similar items and show them in your search results.
+Item-Based Similarity
+Dynamic Filtering
+Once the search result is ready based on your query, now it’s time to filter them further to find the item you are looking for. Dynamic filtering provides the most relevant keywords, tags, categories, price range based on user behavior, preference, and the result items. With this feature, user can choose the right action to filter the initial search result with minimum effort.
+Gigalogy AI platform provides a fully customized personalized search engine to give the best online experience to the user. Our search engine can be integrated into any online platform for industries such as E-commerce, Travel, and Entertainment. It is easy to deploy and takes less than 30 minutes to integrate into any application.
+In our next article, we will explain how to integrate our personalized search engine with sample data and response.
+Stay tuned!
+Sign up to discover human stories that deepen your understanding of the world.
+Free
+Distraction-free reading. No ads.
+Organize your knowledge with lists and highlights.
+Tell your story. Find your audience.
+Sign up for free
+Membership
+Access the best member-only stories.
+Support independent authors.
+Listen to audio narrations.
+Read offline.
+Join the Partner Program and earn for your writing.
+Try for $5/month
+--
+Written by Gigalogy
+10 Followers
+Bridging the Gap Between Technology and User Experience. Empowering Businesses to Unlock the Full Potential of AI.
+Follow

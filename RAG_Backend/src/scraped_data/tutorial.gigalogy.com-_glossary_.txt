@@ -1,0 +1,29 @@
+URL: https://tutorial.gigalogy.com/glossary/
+
+Title: Glossary - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+Glossary
+Index
+Index are the data organizing mechanism which are similar to the database of relational database system.
+Mapper
+Mapper is the system to map recommender key to data source key. Therefore, solution can understand data from any data source generate intelligence from them.
+Reindex
+Reindexing is a process to copy documents from one index to another, optionally filtering the source documents by a query, fetching the documents from a remote cluster. You will about to change the settings and mappings of a destination index with reindex.
+Index Settings
+Index settings are one of the index modules created per index and control all aspects of the index.
+Index Mappings
+Index mapping is the process of defining how a document and the fields it contained are sorted and indexed.
+Previous
+Release notes
+Made with Material for MkDocs

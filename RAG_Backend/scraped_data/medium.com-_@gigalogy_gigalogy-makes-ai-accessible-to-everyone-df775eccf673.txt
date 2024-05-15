@@ -1,0 +1,94 @@
+URL: https://medium.com/@gigalogy/gigalogy-makes-ai-accessible-to-everyone-df775eccf673
+
+Title: Gigalogy makes AI accessible to everyone | by Gigalogy | Medium
+
+Content:
+Open in app
+Sign up
+Sign in
+Write
+Gigalogy makes AI accessible to everyone
+Gigalogy
+·
+Follow
+4 min read
+·
+May 12, 2022
+--
+Gigalogy launched “Gigalogy AI Platform (GAIP)”, to dramatically facilitate AI development
+Gigalogy, a user experience first company transforming technology into better experience, launched a platform for ready to use, end-to-end automated AI solutions that can be integrated to any product with minimum effort and maximum efficiency.
+“Whether you are an individual/startup/business with an idea that can be transformed into a greater value with the power of AI, you deserve the opportunity/support to bring your idea to life. AI should be affordable, easy to integrate and meaningful for everyone.” Mosleh Uddin, CEO
+Today, AI is all around us and infused in our daily lives. You already use it without knowing it, while scrolling our Instagram feed, listening to music on Spotify or watching Netflix. Did you know that 80% of Netflix TV shows people are watching comes from their recommendation engines? AI makes our lives smoother and easier by offering a tailor-made user experience.
+Even though the enthusiasm for AI is getting bigger and bigger, companies are facing a lot of challenges:
+Limited number of AI experts: According to Global AI Talent Report 2019, there were less than 25,000 AI experts globally. Same year in Japan, there were only 805 AI experts. Japan’s Ministry of Economy, Trade and Industry estimates that the nation will face a shortage of 120,000 AI business experts by 2030.
+Expensiveness of the project: The cost of implementing a MVP AI solution may vary from 200,000 USD to 1,000,000 USD.
+Time consuming: In an average it takes somewhere between 9 months ~ 1 year to come up with MVP solutions.
+Besides, there are technical challenges:
+Dependability: Performance of an AI solution is dependent on the quality of data, domain knowledge of the person processing it, the techniques that are used to build the model and so on.
+Flexibility: AI solutions needs to be developed with enough flexibility so that it can be integrated to the digital product smoothly.
+Scalability: AI solutions tends to use a lot more resources compared to traditional software application. Developing a highly scalable automated infrastructure is a must in order to get the best out of it.
+OUR SOLUTION
+We provide a platform for ready to use, end-to-end automated AI solutions that can be integrated to any product with minimum effort and maximum efficiency.
+A USER EXPERIENCE FIRST PLATFORM
+Greater Value: Fully managed and problem focused solutions to improve user experience and bring the best out technology.
+Marketplace: Personalized search engine to find solutions matching customer needs.
+Integration: Ready-to-use, can be integrated to any digital product with minimum effort
+On our platform, you can search a solution, preview its details, create a project, access tutorials, documentation and production ready API/SDK to integrate the solution in your product with minimum effort.
+A User Experience First Platform
+SOLUTIONS WE OFFER
+Currently we offer solutions on the following categories,
+Recommendation Engine: Combining user needs and business strategy our recommendation engine provides the most relevant information for end users that lead to maximizing user satisfaction, revenue and brand loyalty.
+Natural Language Processing: Our NLP solutions focus on understanding users thoughts, context and predict an experience that maximizes user satisfaction
+Computer Vision: Our computer vision solutions focus on generating intelligence from image, video, real time data feed.
+OUR KEY VALUE PROPOSITION
+Team: No dedicated team required. Customer can start using our solutions at an affordable price.
+Time: With Gigalogy, Customer solutions will be live in production within 2 weeks.
+Expertise: Combining our domain knowledge with highly scalable AIOps infrastructure, customer project have a higher chance of success with us.
+OUR ADVANTAGE
+Customers do not have to worry about developing software for the machine learning models, deploying it to server, building data pipeline, re-training etc.
+Gigalogy automated AIOps infrastructure takes care of each step and make customer AI journey enjoyable.
+Gigalogy makes AIOps simple, fast and affordable
+Curious to know more? Click here to access GAIP.
+OUR TARGET CUSTOMERS
+Companies with digital product
+Requires AI solution to improve user engagement, LTV, revenue, brand loyalty
+Does not have the resource/expertise to do it by themselves
+We cover solutions on industries such as E-Commerce, Travel, Advertising.
+OUR BUSINESS MODEL
+Subscription: Our subscription based business model is cost effective and allows businesses from micro to large size to integrate the power of AI into their product.
+Zero Set-up Cost: Unlike others we do not have any setup cost to start our solutions. This helps our customer to onboard in our platform easily.
+Usage Based Infra Cost: Instead of a request based model we charge our customers based on the actual resource they need to support their solutions. This makes it fair, affordable and transparent for our customers.
+LET’S DISCUSS YOUR PROJECT!
+Website: https://gigalogy.com/
+Email: info@gigalogy.com
+Phone: +813–4500–7914
+Gigalogy Inc. 1 Chome-28–2 Shoto, Shibuya City, Tokyo 150–0046
+Executives: Mosleh Uddin, CEO
+ABOUT US
+We are Gigalogy, an innovative collective of like-minded folks building the next generation user experience with the power of technology.
+LinkedIn: https://www.linkedin.com/company/gigalogy
+Facebook: https://www.facebook.com/gigalogy/
+Twitter: https://twitter.com/gigalogy
+Sign up to discover human stories that deepen your understanding of the world.
+Free
+Distraction-free reading. No ads.
+Organize your knowledge with lists and highlights.
+Tell your story. Find your audience.
+Sign up for free
+Membership
+Access the best member-only stories.
+Support independent authors.
+Listen to audio narrations.
+Read offline.
+Join the Partner Program and earn for your writing.
+Try for $5/month
+AI
+UX
+Artificial Intelligence
+Machine Learning
+Personalisation
+--
+Written by Gigalogy
+10 Followers
+Bridging the Gap Between Technology and User Experience. Empowering Businesses to Unlock the Full Potential of AI.
+Follow

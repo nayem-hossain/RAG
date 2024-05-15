@@ -1,0 +1,58 @@
+URL: https://tutorial.gigalogy.com/tutorial/00_Setup_and_training/04_Training/
+
+Title: Training your data - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Training your data
+After you have integrated and saved your data in the GAIP database, you can train and generate intelligence from your data. You need to train several models to get your desired output. In GAIP, there are three different models that have been designed to serve different purposes.
+All models are trained at regular intervals. You can also train the models manually using the following endpoints.
+Info
+It is recommended to run all the trainings once manually after importing the item catalog/data into GAIP. After that you can check the result immediately
+Info
+These steps can also be done from our platform (GAIP). Refer here for detail.
+Item Training
+Item model takes your items from the database and generates intelligence from it so that our solution could recommend items from user behavior and filter out items with personalized search results.
+Request endpoint for training item model:
+GET /v1/item/train
+Image Training
+Image model takes image url from item database and generates feature vectors. Feature vectors leads to calculate the similarity score and predict similar image.
+Request endpoint for training image model:
+GET /v1/image/train
+Rank Training
+Rank model considers user behavior, item relations from item data to predict most trending items.
+Note
+You will need user data to train the rank model. Follow user behavior section to save user data.
+Request endpoint for training rank model:
+GET /v1/rank/train
+While hitting the training endpoints, you will get a task id in response. You can check the training status of the model using that task id from GET v1/tasks/{task_id} endpoint.
+It is recommended to always check and confirm with the Task endpoints to confirm the status of the training. When using it for the first time, it might take some time to complete.
+You could also check the status of any training model with task type from GET/v1/tasks endpoint. By default, you will get the latest 100 tasks with their details.
+You can train each model once in 24 hours time frame.
+Previous
+Integration of Catalogue information and user behavior data
+Next
+Personalized search
+Made with Material for MkDocs

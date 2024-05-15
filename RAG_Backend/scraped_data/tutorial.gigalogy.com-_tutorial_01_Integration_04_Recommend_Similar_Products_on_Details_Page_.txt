@@ -1,0 +1,38 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/04_Recommend_Similar_Products_on_Details_Page/
+
+Title: Recommend similar items - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Recommend Similar Products
+This solution can be used to recommend similar products and could be used in your EC site's product details page or search result page to show similar products.
+Item recommend endpoint understands the content of your item and returns the most similar items as response.
+Request path for this solution is: POST /v1/items/recommend
+To implement this solution, the required parameters with description and a sample request body can be found here. You can find sample code for implementation here.
+Previous
+Recommend trending items
+Next
+Recommend items purchase together
+Made with Material for MkDocs

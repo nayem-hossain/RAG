@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build: .  # Build the Docker image using the Dockerfile in the current directory
+    ports:
+      - "8000:8000"  # Expose port 8000 on the host and map it to port 8000 in the container
+    environment:
+      - GEMINI_API_KEY_FILE=/run/secrets/gemini_api_key.txt  # Set environtment variable for Gemini API key file path
+      - QDRANT_API_KEY_FILE=/run/secrets/qdrant_api_key.txt  # Set environment variable for Qdrant API key file path
+      - QDRANT_URL_FILE=/run/secrets/qdrant_url.txt  # Set environment variable for Qdrant URL file path
+    secrets:
+      - gemini_api_key  # Specify the Docker secret for the Gemini API key
+      - qdrant_api_key  # Specify the Docker secret for the Qdrant API key
+      - qdrant_url  # Specify the Docker secret for the Qdrant URL
+    volumes:
+      - ./secrets:/run/secrets  # Mount the local 'secrets' directory to the '/run/secrets' directory in the container
+
+secrets:
+  gemini_api_key:
+    file: ./secrets/gemini_api_key.txt  # Define the Docker secret 'gemini_api_key' and specify the file path
+  qdrant_api_key:
+    file: ./secrets/qdrant_api_key.txt  # Define the Docker secret 'qdrant_api_key' and specify the file path
+  qdrant_url:
+    file: ./secrets/qdrant_url.txt  # Define the Docker secret 'qdrant_url' and specify the file path
+
+
+# The purpose of creating these empty files inside the /secrets directory of the container is to 
+# provide a location for Docker to mount the secret values into the container securely. 
+# The actual secret values are injected into these files by Docker at runtime, ensuring 
+# that they are securely managed and accessible only to authorized containers.

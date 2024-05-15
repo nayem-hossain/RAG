@@ -1,0 +1,106 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/Questionnaire/
+
+Title: Questionnaire - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Questionnaire
+Our questionnaire software is specifically tailored to provide recommendations for novice and experienced users. Here is how it works:
+Questionnaire Design: We meticulously design the questionnaire to encapsulate all necessary questions and decisions.
+Questionnaire Registration: The questionnaire is seamlessly integrated into the project, enabling easy access and interaction.
+User Response Collection: User responses are gathered through an interactive, user-friendly, UI-based questionnaire embedded in the website.
+Response Processing: These responses are then processed by the GAIP system.
+Product Recommendation: Finally, personalized product recommendations are suggested based on the processed responses.
+Furthermore, the registration of the questionnaire into the project constitutes two crucial phases:
+Registration of Questionnaire: Where the questionnaire is incorporated into the project.
+Registration of Questionnaire Mapper: Which equips the AI system with the knowledge to accurately interpret decisions based on the users' responses to the questions.
+Registration of Questionnaire
+To manage the questionnaire, a series of RESTful API endpoints are provided which can be explored in our sandbox.
+Creating a new questionnaire: Make a POST request to /v1/questionnaires to create a new questionnaire. The sandbox hosts detailed explanations and sample request bodies. The questionnaire can be divided into different sections, with at least one required.
+Listing all questionnaires: Sending a GET request to /v1/questionnaires/list lists all the questionnaire's ID and names. A project can host multiple questionnaires that are differentiated through these IDs.
+Viewing a questionnaire: Make a GET request to /v1/questionnaires/{questionnaire_id} to retrieve a specific questionnaire's details, including sections and questions.
+Updating and deleting questionnaire: Use the PUT /v1/questionnaires/{questionnaire_id} and DELETE /v1/questionnaires/{questionnaire_id} endpoints to update or remove a questionnaire respectively.
+Registration of Questionnaire Mapper
+A questionnaire mapper is essential to instruct the system on making decisions based on user responses. Corresponding endpoints for creating, viewing, and editing a mapper are found at /v1/questionnaires/{questionnaire_id}/mapper.
+To create a mapper, use POST /v1/questionnaires/{questionnaire_id}/mapper.
+The mapper consists of five main components:
+Questions: This section maps the decisions for all questionnaire questions.
+Exclusivity: Handles duplicate removal and exclusivity requirements.
+Prompt Generation: This section produces prompts that are used by the AI to generate recommendations.
+Prompt Order: Sets the sequence in which prompts appear.
+GPT settings: Provides settings and parameters to the GPT module for context understanding.
+Each section will be explained in detail as we progress further.
+Questions
+Inside a question object we add mapper for different possible values.
+A questionnaire can have three types of questions 1. Radio button: User can select a single answer, 2. Checkbox: User can select multiple answers, 3. Free text: User can enter string.
+To add mapper for a single value, use the value key as the key for related decision objects. This approach allows you to define how the system should handle or process that value.
+Example
+json { "skincare_history": { "q2": { "mapper": { "a": { "exclude": ["Retinol", "Retinol based products"] } } } } } In the above example, the key a represents answer selected by user. The object associated with a specifies decisions related to it—in this case, an exclude list. This list contains the values Retinol and Retinol based products, defined by the creator of the mapper. How this Exclude list is used is covered in a latter section below.
+To add mapper for a combination of value (Answers with multiple selection), - Use | sign as or to combine more than one values for a decision in mapper. - Use & sign as and to combine more than one values for a decision in mapper. Example
+json { "a|b|c": { "exclude": ["Retinol", "Retinol palmitate"] } }
+To add mapper for free-text value, use any key to add the decision rule. This can be useful for taking age, allergy information etc. Example
+json { "any": { "age": "" } }
+When a decision need to be taken if a set of value is not selected we should use negative selection.
+An example scenario.
+What of the following skincare you follow every day?
+a. Cleanser b. Moisturizer c. Spf d. Serum e. Toner f. Night cream g. Eye cream
+Decision: if cleanser, moisturizer and spf is chosen, AI will consider all products
+If one of the basic step(cleanser, moisturizer, spf) is not chosen, Ai will exclude Retinol, Retinol palmitate, tranexamic acid, vitamin C, vitamin C derivative , arbutin
+Here we need to take a decision if cleanser, moisturizer, spf is not selected, this is a candidate for negative selection.
+Rules: Use ~ as key to add negative selection decisions in a question mapper. Use value serial as usual inside the negative selection object to add decision if a value is not selected, e.g. "a": "decision" Example
+json { "q1": { "mapper" : { "a": { "tags": ["acne", "anti-aging"] }, "~": { "a|b|c": { "exclude": ["Retinol", "Retinol palmitate", "tranexamic acid", "vitamin c", "vitamin c derivative" , "arbutin"] }, "d": { "tags": ["Retinol"] } } } } }
+Exclusivity
+The integration of exclusivity in the mapper is crucial for eliminating duplicates and addressing exclusivity prerequisites.
+To incorporate exclusivity, you utilize the exclusive key to append an object in the following format:
+"prompt_key-1" :  "prompt_key-2"
+Doing so ensures that any value present in both prompt_key-1 and prompt_key-2, within the final prompt, will be extracted exclusively from prompt_key-2.
+For instance: json { "exclusive": { "exclude": "includes", "exclude_tag": "include_tag" } }
+Prompt
+Each prompt section is a decision point. A prompt section has two constituting parts, the sentence and the variable. Let's say we have a decision point to exclude products that has certain tags. we can add a prompt section named exclude_tags as follows
+json { "prompt_sections": { "exclude_tags": "Exclude any products that has following tags {exclude_tags}." } }
+And We need to add the exclude_tags in mapper wherever this decision point need to be mapped. An example mapper, like we have discussed above, would be
+json { "q1": { "mapper": { "a": { "exclude_tags": ["retinol", "retinol based products"] } } } }
+An example prompt section for a cosmetics company could be.
+json { "prompt_sections": { "age": "I am {age} years old.", "gender": "I am a {gender}.", "skin_type": "My skin type is {skin_type}.", "include_tag": "Show products that contain the tag: {include_tag}", "exclude_tag": "Exclude products that do contain the tag: {exclude_tag}" } }
+Prompt Order
+This section is to decide the order of the prompts in the prompt section above. This section must contain all the prompts from the above section. This is the order by which the prompts will be sent to GPT model. Note: This order effects the quality of the response. User should try different orders to find the best result.
+An example prompt order from the prompt_sections sample above sample could be:
+json { "prompt_order": [ "age", "gender", "skin_type", "include_tag", "exclude_tag" ] }
+GPT Settings
+This section is required for the context and various parameter setting for GPT. The prompt generated til this point above, goes to our GPT model, which is familiar with the item catalogue. This GPT model, in turn generates this recommendation for the user. Below is an example.
+json { "gpt_settings": { "model": "gpt-3.5-turbo-0613", "search_max_token": 2500, "intro": "Using given context make recommendation. make recommendation of top {{ recommend_count }} products in json format and your response should denote the json part with three tick notations(). Use we as your pronoun. json object should have following format. {'comment': 'make an overall comment about your recommendations', 'advice':'...', 'recommendations': [{'id':'...', 'comment': 'why you chose this product'},{'id':'...', 'comment': 'why you chose this product'}]}. if the query includes specialist_pretext then include that suggestion in your 'advice'", "system": "You are an expert on ...", "temperature": 0, "top_p": 1, "frequency_penalty": 0, "presence_penalty": 0, "stop": [ "AI:", "Human:" ], "recommend_count": 3, "result_includes": [ "key_name_1", "key_name_2" ], "top_k": 20, "is_keyword_enabled": true } } ```
+Integration of Questionnaire Recommendation
+The questionnaire recommendation function processes user responses, identifies the corresponding questionnaire and decision points, and generates personalized recommendations. The endpoint POST /v1/questionnaire/recommend is designed for this purpose.
+Detailed examples, required parameters, and explanations can be found in our sandbox.
+This endpoint requires questionnaire_id as input. This identifier helps determine which questionnaire and mapping to consult, and which user response to consider, leading to the generation of personalized results.
+You will notice the recommend_count parameter also exist in the mapper. If it is set, the value of this parameter takes priority over recommend_count variable in questionnaire mapper.
+The response format of this endpoint can be customized using the previously mentioned GPT settings.
+Reviewing Questionnaire Recommendation Logs
+By utilizing the endpoint GET /v1/questionnaires/{questionnaire_id}/logs, you're able to access the log of requests dispatched to the v1/questionnaire/recommend endpoint, along with the corresponding generated responses.
+Previous
+Dynamic Pricing
+Next
+GPT Project setup
+Made with Material for MkDocs

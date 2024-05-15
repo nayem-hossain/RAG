@@ -1,0 +1,95 @@
+URL: https://tutorial.gigalogy.com/tutorial/00_Setup_and_training/02_environment_setup/
+
+Title: Environment setup - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Environment setup
+To prepare GAIP for your site, there are 2 main steps
+Mapping creation
+Index creation
+Info
+These steps can also be done from our platform (GAIP). Refer here for detail.
+For this, we will use API endpoints of GAIP listed in our Sandbox
+You can also access our sandbox from the project setting page.
+Mapping creation
+The personalization engine relies on specific default keys to operate effectively. To integrate your item catalogue with our solution, it's essential to align your website's data source keys (such as item name, item description, tags, ingredients, category, etc.) with keys of personalization engine via mapping them. Our personalizer then can understand your data. This is the core part of the personalization system so the schema should be followed properly to successfully map your data.
+Item Catalogue Mapping
+To create mapping, use endpoints listed under Catalog Mapping in the sandbox.
+GET /v1/mappers to get an existing Mapper.
+PUT /v1/mappers to update an existing Mapper.
+POST /v1/mappers to create a new mapper.
+For set up your project mapping we will use POST /v1/mappers. You can find keys, value types, and description with an example request body in the sandbox You can simply replace the values in the example with your item catalogue keys and hit Execute to finish the mapping of your product catalogue Keys with GAIP keys.
+After execution, confirm the server response is success.
+Example of this item mapper creation
+Here, we will use doozie shop as an example E-commerce site.
+For an example item from the shop, this is how the data is structured.
+json { "success": true, "result": [ { "item_id": "12345", "title": "Eco-Friendly Water Bottle", "description": "A durable, BPA-free water bottle designed for everyday use. Made from eco-friendly materials, it keeps your drink cold for up to 24 hours. Perfect for staying hydrated on the go.", "headline": "Stay Hydrated with Our Eco-Friendly Water Bottle", "availability": true, "affiliate_rate": 4, "price": 2360, "currency": "JPY", "shop_id": "hworks", "shop_name": "スマートビズ-ワイシャツ専門店-", "review_count": 2836, "review_average": 4.26, "genre_id": "206363", "brand": null, "shop_url": "https://hb.afl.rakuten.co.jp/hgc/g00rgm95.h3cpt446.g00rgm95.h3cpu696/?pc=https%3A%2F%2Fwww.rakuten.co.jp%2Fhworks%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhworks%2F", "item_url": "https://hb.afl.rakuten.co.jp/hgc/g00rgm95.h3cpt446.g00rgm95.h3cpu696/?pc=https%3A%2F%2Fitem.rakuten.co.jp%2Fhworks%2Fshirt-b0080%2F&m=http%3A%2F%2Fm.rakuten.co.jp%2Fhworks%2Fi%2F10000926%2F", "image_urls": [ "https://thumbnail.image.rakuten.co.jp/@0_mall/hworks/cabinet/001/014/shirt-b0080.jpg", "https://thumbnail.image.rakuten.co.jp/@0_mall/hworks/cabinet/001/014/b0080-lineup.jpg", "https://thumbnail.image.rakuten.co.jp/@0_mall/hworks/cabinet/banner/coupon202308-shdz_sq.jpg" ], "tag_ids": [ 1000903, 1008869, 1039853, 1013746 ], "tags": [], "shipping_overseas": "", "condition": 1, "genre_name": null, "parent_genre_categories": null, "shop_review_count": null, "shop_review_average": null, "tax_included": true, "point_multiplier": 1, "best_seller": false, "sale_start_time": "", "sale_end_time": "", "platform": "rakuten" } ] }
+This shows the keys that doozie shop has for its products. Now we can create a mapping with GAIP keys, and use the POST /v1/mapper endpoint of GAIP. In this endpoint, we will pass the keys of above data source.
+Here is an example of a mapper that we built for doozie shop, based on the keys above:
+json { "key_map": { "item_id": "item_id", "title": "title", "second_title": "headline", "third_title": "shop_name", "fourth_title": "genre_name", "availability": "availability", "description": "description", "image_url": "image_urls", "image_url_type": "LIST_STR", "item_url": "item_url", "price": "price", "categories": [ { "name": "genre_id", "separator": "" } ], "custom":[], "flag": [ "condition" ] } }
+Sample Code
+You can find sample code for this implementation here
+Once the mapper is created, you can use GET /v1/mappers endpoint to see the mapping. You can update any of mapped keys with PUT /v1/mapper endpoint and check the mapper you build from GET /v1/mapper endpoint.
+User Behavior mapping
+Similar to the item mapping key, there are some default keys for user behavior data.
+Note
+This step is required If you want to save historical user behavior data through CSV files. If you use our data collection endpoints to collect data from now on, this is not required.
+You can find the Endpoints for user mapping under "Historical User Data Collection" section in the Sandbox
+To implement this, please follow similar steps as above.
+However, in this case please note that there are four sets of endpoints for Browsing history, purchase history, rating history, user detail. You have to create mapper for each if you want to import the data.
+Index creation
+In this step, you need to create indices. We need multiple indices to run recommender solution successfully. These indices will create the necessary schemas to hold your data.
+There are 3 endpoints here
+POST /v1/index/create --> Create indices to hold your data
+DELETE /v1/index/delete --> Delete indices
+POST /v1/reindex --> Creates index with new mappings and settings and create alias for new index
+Create Index
+Request endpoint
+POST /v1/index/create Simply use your project key and API and click execute to create the indices for your project. Note that this will throw an error if the mapping in the previous step is not done correctly.
+After the successful execution all the necessary index will be created and item index will be created in the background. You can check the status of item index creation with a task id from GET /v1/tasks/{task_id} API at the bottom of the page.
+Please confirm the task was success.
+Delete Index
+You can delete an existing index with this endpoint.
+Request endpoint
+DELETE /v1/index/delete Available values are items, image_features, browse, purchase, ratings, search, stats, settings, user, tasks, logs.
+If you Delete any index, please ensure to create the index again, unless you will get error when trying to input data/item catalogue or run training.
+Reindex
+In Elastic search, reindexing is the process of copying data from one index to another, either within the same cluster or to a different cluster. This can be useful in a variety of situations, such as:
+Updating the mapping of an index: If you need to make changes to the mapping of an index, you can create a new index with the updated mapping and then reindex the data from the old index to the new one.
+Moving data from one index to another: If you need to move data from one index to another, you can reindex the data from the source index to the destination index.
+Updating the data with new data: If you have updated data that you want to add to an index, you can reindex the data with the updated data.
+Changing the shard count of an index: If you need to change the number of shards that an index is using, you can reindex the data to a new index with the desired number of shards.
+We can use Reindex API to copy data from index to another index.
+Request Endpoint: POST /v1/reindex
+Here is an example how to pass mappings and settings in request body:
+json { "index_type": "items", "mappings": { "settings": { "analysis": { "char_filter": { "normalize": { "type": "icu_normalizer", "name": "nfkc", "mode": "compose" } }, "tokenizer": { "ja_kuromoji_tokenizer": { "mode": "search", "type": "kuromoji_tokenizer", "discard_compound_token": "true", "user_dictionary_rules": [] }, "ja_ngram_tokenizer": { "type": "ngram", "min_gram": 2, "max_gram": 3, "token_chars": [ "letter", "digit" ] } }, "filter": { "ja_index_synonym": { "type": "synonym", "lenient": "false", "synonyms": [] } }, "analyzer": { "ja_kuromoji_index_analyzer": { "type": "custom", "char_filter": [ "normalize" ], "tokenizer": "ja_kuromoji_tokenizer", "filter": [ "kuromoji_baseform", "kuromoji_part_of_speech", "ja_index_synonym", "cjk_width", "ja_stop", "kuromoji_stemmer", "lowercase" ] }, "ja_kuromoji_search_analyzer": { "type": "custom", "char_filter": [ "normalize" ], "tokenizer": "ja_kuromoji_tokenizer", "filter": [ "kuromoji_baseform", "kuromoji_part_of_speech", "cjk_width", "ja_stop", "kuromoji_stemmer", "lowercase" ] }, "ja_ngram_index_analyzer": { "type": "custom", "char_filter": [ "normalize" ], "tokenizer": "ja_ngram_tokenizer", "filter": [ "lowercase" ] }, "ja_ngram_search_analyzer": { "type": "custom", "char_filter": [ "normalize" ], "tokenizer": "ja_ngram_tokenizer", "filter": [ "lowercase" ] } } } }, "mappings": { "properties": { "item": { "properties": { "{title}": { "type": "text", "search_analyzer": "ja_kuromoji_search_analyzer", "analyzer": "ja_kuromoji_index_analyzer", "fields": { "ngram": { "type": "text", "search_analyzer": "ja_ngram_search_analyzer", "analyzer": "ja_ngram_index_analyzer" } } }, "{second_title}": { "type": "text", "search_analyzer": "ja_kuromoji_search_analyzer", "analyzer": "ja_kuromoji_index_analyzer", "fields": { "ngram": { "type": "text", "search_analyzer": "ja_ngram_search_analyzer", "analyzer": "ja_ngram_index_analyzer" } } }, "{third_title}": { "type": "text", "search_analyzer": "ja_kuromoji_search_analyzer", "analyzer": "ja_kuromoji_index_analyzer", "fields": { "ngram": { "type": "text", "search_analyzer": "ja_ngram_search_analyzer", "analyzer": "ja_ngram_index_analyzer" } } }, "{description}": { "type": "text", "search_analyzer": "ja_kuromoji_search_analyzer", "analyzer": "ja_kuromoji_index_analyzer", "fields": { "ngram": { "type": "text", "search_analyzer": "ja_ngram_search_analyzer", "analyzer": "ja_ngram_index_analyzer" } } }, "{price}": { "type": "float" }, "{availability}": { "type": "boolean" } } } } } } } Available values are items, image_features, browse, purchase, ratings, search, stats, settings, user, tasks, logs. When you define the mappings object, you should use the same keys as in the item mapper that you have built with POST /v1/mapper API.
+You might not need analyzers or tokenizers for all indices. You can keep the settings field empty if it is not required. Here is an example,
+json { "index_type": "search", "mappings": { "settings": {}, "mappings": { "properties": { "date": { "type": "date" } } } } }
+Previous
+Project setup
+Next
+Integration of Catalogue information and user behavior data
+Made with Material for MkDocs

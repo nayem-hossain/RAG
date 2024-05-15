@@ -1,0 +1,38 @@
+URL: https://tutorial.gigalogy.com/tutorial/00_Setup_and_training/00_account_project_creation/
+
+Title: Account and Project creation - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+Account and Project creation
+Account creation
+Go to platform.gigalogy.com. Click on Get started on the top right and follow the instructions to create an account.
+After account creation, you will receive an Email for account verification. Click the link in the Email to complete the account verification.
+Note: If you don't see the email, check your spam folder or contact support.
+After creating account and logging in, you will see the solutions segments on the left side navigation bar, and detail solutions under those segments.
+Project creation
+From this page, click on the button Create a project to create your first project.
+You will need to fill in the following details:
+Project name: Can be anything, recommended to use something easier to track later.
+Language: Can be english or Japanese, based on the content of your catalog information
+Industry: Select the industry the project is intended for.
+Enabled solutions: Select the solutions you want to use.
+Next, you will see a confirmation page, check the details and click and your project creation is completed.
+In projects page, now you can see the project you just created.
+Click on the project to see the project Detail, Settings and Insights page.
+If it is your first project, this will be a trial project. The trial period is 90 days. In the project detail page, you can see the susbscription status, and related information. If you wish to end the trial period and convert to standard plan, click the button at the bottom of the page to request the change. Please note this cannot be reversed
+If it is not your first project, this will be a standard project. In the project detail page, you can see the susbscription status, and the API rate limits for the project. If you wish to increase the API rate limits, please contact us at support@gigalogy.com.
+Previous
+Overview
+Next
+Credentials
+Made with Material for MkDocs

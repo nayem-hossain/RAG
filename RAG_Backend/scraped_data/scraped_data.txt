@@ -1,0 +1,1479 @@
+Endpoint: get//v1/mappers
+HTTP Method: Get mapper 
+Method Description: Get the mapped keys between your data source and our recommender system.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/mappers
+HTTP Method: Update a mapper 
+Method Description: This endpoint updates the mapped keys. Please checkout the schema from the
+request body section for details about the key type and supported values.
+Parameters:
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items and typically should be the Unique ID of your products. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: title, Key Type: str, Value Type: str, Description: Represents your product / item title.
+ Name: second_title, Key Type: Optional[str], Value Type: str, Description: If your item has a catch copy / headline field you can assign it here.
+ Name: third_title, Key Type: Optional[str], Value Type: str, Description: If you have another field you want to use as a title level assign it here.
+ Name: fourth_title, Key Type: Optional[str], Value Type: str, Description: If you have another field you want to use as a title level assign it here.
+ Name: availability, Key Type: str, Value Type: bool, Description: Represents whether your item is available or not. Data type for this key is 
+ Name: description, Key Type: Optional[str], Value Type: str, Description: Represents your product details information.
+ Name: image_url, Key Type: Optional[str], Value Type: Depends on your data source, Description: Represents image url of your data source. 
+ Name: image_url_type, Key Type: Optional[Enum], Value Type: Selected enum value, Description: Based on this our recommended will choose how to process your image url data. Available values are 
+ Name: item_url, Key Type: str, Value Type: str, Description: Represents your product / item details page url
+ Name: price, Key Type: str, Value Type: int, Description: Represents your product / item price.
+ Name: category, Key Type: List[str], Value Type: str, Description: Represents your category list. You can add multiple category here.
+ Name: flag, Key Type: List[str], Value Type: bool, Description: Represents list of flags available in your dataset. Flag value data type is 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/mappers
+HTTP Method: Map data source keys with recommender keys 
+Method Description: This endpoint map data source keys with our recommender keys. Our recommender
+system can understand your data by mapping keys. This is the core part of the
+recommender system so the schema should be followed properly to successfully map
+your data. Please checkout the schema from the request body section for details
+about the key type and supported values.
+Parameters:
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items and typically should be the Unique ID of your products. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: title, Key Type: str, Value Type: str, Description: Represents your product or item title.
+ Name: second_title, Key Type: Optional[str], Value Type: str, Description: If your item has a catch copy or headline field you can assign it here.
+ Name: third_title, Key Type: Optional[str], Value Type: str, Description: If you have another field you want to use as a title level assign it here.
+ Name: fourth_title, Key Type: Optional[str], Value Type: str, Description: If you have another field you want to use as a title level assign it here.
+ Name: availability, Key Type: str, Value Type: bool, Description: Represents whether your item is available or not. Data type for this key is 
+ Name: description, Key Type: Optional[str], Value Type: str, Description: Represents your product details information.
+ Name: image_url, Key Type: Optional[str], Value Type: Depends on your data source, Description: Represents image url of your data source. 
+ Name: image_url_type, Key Type: Optional[Enum], Value Type: Selected enum value, Description: Based on this our recommended will choose how to process your image url data. Available values are 
+ Name: item_url, Key Type: str, Value Type: str, Description: Represents your product or tem details page url
+ Name: price, Key Type: str, Value Type: int, Description: Represents your product or item price.
+ Name: categories, Key Type: List[Dict[str,str]], Value Type: str, Description: Represents your category list. You can add multiple category here.
+ Name: flag, Key Type: List[str], Value Type: bool, Description: Represents list of flags available in your dataset. Flag value data type is 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/keys
+HTTP Method: Get keys 
+Method Description: Get your data source keys.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/keys
+HTTP Method: Update keys 
+Method Description: This endpoint updates(add / remove / re-order) your data source keys. It takes
+list of key as required parameter.
+Parameters:
+ Name: keys, Key Type: List[str], Value Type: str, Description: List of column names with the same order as your data in CSV file.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/keys
+HTTP Method: Save column / key name with the same order as your data in the source file 
+Method Description: This endpoint saves column / key name with the same order as your data in the
+source file. It takes list of keys as required parameter.
+This endpoint is mandatory when you use CSV file as your data source and your CSV file
+does not contain headers. Make sure to enter the column names with the same
+order as your data in CSV file.
+Parameters:
+ Name: keys, Key Type: List[str], Value Type: str, Description: List of column names with the same order as your data in CSV file.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/save
+HTTP Method: Upload a CSV or JSON file and save data in item index 
+Method Description: This endpoint uploads and saves data from the CSV file in the item index. It only
+takes text or CSV files as a required parameter. If you want to integrate your
+item data from a CSV file with our recommender system this endpoint will upload
+the file and save them to the database.
+Responses:
+
+Endpoint: post//v1/items/save/remote
+HTTP Method: Save items to database from a given endpoint 
+Method Description: This endpoint fetches item data from external API and saves them in the item index.
+It takes URL, method, response_items_key as required parameters as well as headers,
+query_parameters, body_parameters, response_item_key as optional parameters.
+Please check out the schema from the request body section for details about the
+key type and supported values.
+This endpoint can be used to fetch items into our recommender system if you
+have product details API.
+Parameters:
+ Name: url, Key Type: str, Value Type: str, Description: Represents URL of the product details api from where you want to fetch items into recommender
+ Name: method, Key Type: str, Value Type: str, Description: Represents api method of the endpoint from which you want to fetch data into recommender.
+ Name: headers, Key Type: Optional[Dict[str, str]], Value Type: str, Description: Represents the meta data associated with api request and response.
+ Name: query_parameters, Key Type: Optional[Dict[str, str]], Value Type: str, Description: Represents the query parameter of api endpoint. It could be required to fetch data from external api otherwise you can keep it empty.
+ Name: body_parameters, Key Type: Optional[Dict[str, str]], Value Type: str, Description: Represents the body parameter of api endpoint. It could be required to fetch data from external api otherwise you can keep it empty.
+ Name: response_items_key, Key Type: str, Value Type: str, Description: Represents the key of response items which you want to fetch into recommender .
+ Name: response_item_key, Key Type: Optional[str], Value Type: str, Description: If you have multiple keys in response you can use the key from where you want to fetch items. It could be empty as well.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items
+HTTP Method: Get a list of item details by their ids 
+Method Description: Get searched items with item details by passing list of item ids.
+Please check out the schema from the request body section for details about the
+key type and supported values.
+Parameters:
+ Name: ids, Key Type: List[str], Value Type: str, Description: List of item ids.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/browse/mapper
+HTTP Method: Get browse mapper 
+Method Description: Get the mapped keys for browsed items between your data source and our recommender system.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/items/browse/mapper
+HTTP Method: Update browse mapper 
+Method Description: This endpoint updates the browse mapped keys. Please checkout the schema from the
+request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: date, Key Type: str, Value Type: date, Description: Represents product / item browsing session.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/browse/mapper
+HTTP Method: Map data source keys with recommender browse keys 
+Method Description: This endpoint map data source keys with our recommender browse keys. This step is
+compulsory if you want to upload browse data from CSV file. Please checkout the
+schema from the request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of logged out unique user. choose the parameter from your data source that you want to be the id of logged-out user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: date, Key Type: str, Value Type: date, Description: Represents product / item browsing session.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/purchase/mapper
+HTTP Method: Get purchase mapper 
+Method Description: Get the mapped keys for purchased items between your data source and our recommender system.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/items/purchase/mapper
+HTTP Method: Update purchase mapper 
+Method Description: This endpoint updates the purchase mapped keys. Please checkout the schema from the
+request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: price, Key Type: str, Value Type: float, Description: Represents your product / item price.
+ Name: quantity, Key Type: str, Value Type: int, Description: Represents number of purchased product / item.
+ Name: date, Key Type: str, Value Type: date, Description: Represents product / item purchased time.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/purchase/mapper
+HTTP Method: Map data source keys with recommender purchase keys 
+Method Description: This endpoint map data source keys with our recommender browse keys. This step is
+compulsory if you want to upload purchase data from CSV file. Please checkout the
+schema from the request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: price, Key Type: str, Value Type: float, Description: Represents your product / item price.
+ Name: quantity, Key Type: str, Value Type: int, Description: Represents number of purchased product / item.
+ Name: date, Key Type: str, Value Type: date, Description: Represents product / item purchased time.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/rating/mapper
+HTTP Method: Get rating mapper 
+Method Description: Get the mapped keys for rated items between your data source and our recommender system.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/items/rating/mapper
+HTTP Method: Update rating mapper 
+Method Description: This endpoint updates the rating mapped keys. Please checkout the schema from the
+request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: rating, Key Type: str, Value Type: str, Description: Represents rating given by user for specific product / item. choose the parameter from your data source that you want to be the rating key.
+ Name: date, Key Type: str, Value Type: date, Description: Represents the time when a rating is given for specific product / item.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/rating/mapper
+HTTP Method: Map data source keys with recommender rating keys 
+Method Description: This endpoint map data source keys with our recommender rating keys. This step is
+compulsory if you want to upload rating data from CSV file. Please checkout the
+schema from the request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: item_id, Key Type: str, Value Type: str, Description: item_id is the unit of recommended items. choose the parameter from your data source that you want to be the unit of recommendation.
+ Name: rating, Key Type: str, Value Type: str, Description: Represents rating given by user for specific product / item. choose the parameter from your data source that you want to be the rating key.
+ Name: date, Key Type: str, Value Type: date, Description: Represents the time when a rating is given for specific product / item.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/users/mapper
+HTTP Method: Get user mapper 
+Method Description: Get the mapped keys for user information between your data source and our recommender system.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/users/mapper
+HTTP Method: Update user mapper 
+Method Description: This endpoint updates the user mapped keys. Please checkout the schema from the
+request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: address, Key Type: Optional[str], Value Type: str, Description: Represents address of the unique user.
+ Name: gender, Key Type: Optional[str], Value Type: str, Description: Represents gender of the unique user.
+ Name: age, Key Type: Optional[str], Value Type: str, Description: Represents age of the unique user.
+ Name: type_name, Key Type: str, Value Type: str, Description: Represents the type or preference of the user. If you have multiple columns for user preference you can assign them.
+ Name: separator, Key Type: Optional[str], Value Type: str, Description: If one key contains multiple parameter with separator in your data source please assign the separator here. If there is no separator in column value you can pass 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/users/mapper
+HTTP Method: Map data source keys with recommender user keys 
+Method Description: This endpoint map data source keys with our recommender user keys. This step is
+compulsory if you want to upload user data from CSV file. Please checkout the
+schema from the request body section for details about the key type and supported values.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: user_id is the id of unique user. choose the parameter from your data source that you want to be the id of user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: member_id is the id of logged-in user. choose the parameter from your data source that you want to be the id of logged-in user.
+ Name: address, Key Type: Optional[str], Value Type: str, Description: Represents address of the unique user.
+ Name: gender, Key Type: Optional[str], Value Type: str, Description: Represents gender of the unique user.
+ Name: age, Key Type: Optional[str], Value Type: str, Description: Represents age of the unique user.
+ Name: type_name, Key Type: str, Value Type: str, Description: Represents the type or preference of the user. If you have multiple columns for user preference you can assign them.
+ Name: separator, Key Type: Optional[str], Value Type: str, Description: If one key contains multiple parameter with separator in your data source please assign the separator here. If there is no separator in column value you can pass 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/browse/save
+HTTP Method: Upload a CSV file and save data in browse index 
+Method Description: This endpoint uploads and saves data from the CSV file in the browse index. It only
+takes text or CSV files as a required parameter. If you want to upload your
+browse data from a CSV file with our recommender system this endpoint will upload
+the file and save them to the database.
+Responses:
+
+Endpoint: post//v1/items/purchase/save
+HTTP Method: Upload a CSV file and save data in purchase index 
+Method Description: This endpoint uploads and saves data from the CSV file in the purchase index. It only
+takes text or CSV files as a required parameter. If you want to upload your
+purchase data from a CSV file with our recommender system this endpoint will upload
+the file and save them to the database.
+Responses:
+
+Endpoint: post//v1/items/rating/save
+HTTP Method: Upload a CSV file and save data in rating index 
+Method Description: This endpoint uploads and saves data from the CSV file in the rating index. It only
+takes text or CSV files as a required parameter. If you want to upload your
+rating data from a CSV file with our recommender system this endpoint will upload
+the file and save them to the database.
+Responses:
+
+Endpoint: post//v1/users/save
+HTTP Method: Upload a CSV file and save data in user index 
+Method Description: This endpoint uploads and saves data from the CSV file in the user index. It only
+takes text or CSV files as a required parameter. If you want to upload your
+user information data from a CSV file with our recommender system this endpoint will upload
+the file and save them to the database.
+Responses:
+
+Endpoint: post//v1/indices
+HTTP Method: Create indices to hold your data 
+Method Description: Now you need to create indexes. These indexes will create the necessary schemas
+to hold your data.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: delete//v1/indices
+HTTP Method: Delete indices 
+Method Description: You can delete an index with this endpoint. It takes index_type as required parameter.
+Parameters:
+ Name: index_type, Key Type: Enum, Value Type: Selected enum value, Description: Represents the type of index. Available value 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/reindex
+HTTP Method: Creates index with new mappings and settings and create alias for new index 
+Method Description: This endpoint create new index with new mappings and settings as well as copy all
+the documents from previous index to new index. It takes index_type and mapping as
+required parameters.
+Parameters:
+ Name: index_type, Key Type: Enum, Value Type: Selected enum value, Description: Represents the type of index. Available value 
+ Name: mapping, Key Type: Dict, Value Type: Dict, Description: Represents required mappings and settings to create index.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/ranks/settings
+HTTP Method: Get rank settings 
+Method Description: Get your saved rank settings.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/ranks/settings
+HTTP Method: Updates rank settings 
+Method Description: This endpoint updates the parameter in rank settings. It takes several technical
+parameters. Please checkout the schema from the request body section for details
+about the key type and supported values.
+Parameters:
+ Name: interval, Key Type: List[Enum], Value Type: Selected enum value, Description: Represents the time interval to train ranking model. Available values are 
+ Name: split_size, Key Type: float, Value Type: float, Description: Represents split_size to split data. Splitted data would be distributed as X_train, X_test, y_train, y_test and prepare the data for ranking model. IIf you are not sure about this parameter please use the default value.
+ Name: epoch, Key Type: int, Value Type: int, Description: Represents the number of epoch for training the ranking model. If you are not sure about this parameter please use the default value.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/ranks/settings
+HTTP Method: Creates rank settings 
+Method Description: This endpoint determines the key parameters for our ranking model. It takes
+several technical parameters. Please checkout the schema from the request body
+section for details about the key type and supported values.
+Parameters:
+ Name: interval, Key Type: List[Enum], Value Type: Selected enum value, Description: Represents the time interval to train ranking model. Available values are 
+ Name: split_size, Key Type: float, Value Type: float, Description: Represents split_size to split data. Splitted data would be distributed as X_train, X_test, y_train, y_test and prepare the data for ranking model. IIf you are not sure about this parameter please use the default value.
+ Name: epoch, Key Type: int, Value Type: int, Description: Represents the number of epoch for training the ranking model. If you are not sure about this parameter please use the default value.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/train
+HTTP Method: Trains item data and generates a graph of relations 
+Method Description: This endpoint trains item data and generates intelligence from it.
+Item data are trained automatically on a regular time interval. This endpoint
+can be used to train item data manually.
+Responses:
+
+Endpoint: post//v1/images/train
+HTTP Method: Trains image model 
+Method Description: This endpoint takes image data from the database and generates intelligence from
+it. It takes start_date and end_date as optional parameters.
+Image model is trained automatically on a regular time interval. This endpoint
+can be used to train image model manually.
+Parameters:
+ Name: start_date, Key Type: Optional[str], Value Type: str, Description: Initial date of date range based on which you want to train image model.
+ Name: end_date, Key Type: Optional[str], Value Type: str, Description: End date of date range based on which you want to train image model.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/ranks/train
+HTTP Method: Trains ranking model that predicts the trending items 
+Method Description: This endpoint considers user behavior, item relations and train ranking model to
+predict most trending items.
+Ranking model is trained automatically on a regular time interval. This endpoint
+can be used to train ranking model manually.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/nearby
+HTTP Method: Returns nearest items in terms of distance 
+Method Description: This endpoint finds the nearest items in terms of distance from a specific item 
+given as an input. Input parameters are item_id, radius, filters and excludes. 
+Please check out the schema from the request body section for
+details about the key type and supported values.
+Parameters:
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the item.
+ Name: radius, Key Type: Dict, Value Type: Dict, Description: Radius contains d_from and d_to. Based on these values nearest items will be returned
+ Name: filters, Key Type: List, Value Type: str, Description: You can pass categories (multiple supported) here. Based on the supported values the response will be filtered
+ Name: excludes, Key Type: List, Value Type: str, Description: You can exclude categories (multiple supported) with this parameter.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/images/search
+HTTP Method: Image search engine 
+Method Description: This endpoint generates search results based on image similarity. It takes an
+image, user_id, start, size and details as required parameter and member_id as
+optional parameter. Please check out the schema from the request body section for
+details about the key type and supported values.
+This endpoint can be used along with personalized search engine to provide users
+options to execute their search experience.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: image, Key Type: str($bin), Value Type: file, Description: Represents the image for finding items that are similar to the one it captured. Supports webp, jpeg, jpg, and png formats.
+ Name: start, Key Type: Optional[int], Value Type: int, Description: Represents the initial point of pagination. If you want to see first items of index in the first position of your search result it will be 0.
+ Name: size, Key Type: Optional[int], Value Type: int, Description: Represents the size or number of items to show in search result. Size 10 means it will show first 10 items from index in your search result.
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/users/keywords
+HTTP Method: Get all searched keywords by a specific user 
+Method Description: Get the searched keywords by a specific user in your application.
+This endpoint can be used to analyze / learn trends show infographics to users.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: get//v1/categories/keywords
+HTTP Method: Get top keywords by categories 
+Method Description: Get the searched keywords by a specific user in your application.
+This endpoint can be used to analyze / learn trends show infographics to users.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: post//v1/items/search
+HTTP Method: Advance search with gpt models 
+Method Description: Search using GPT models
+Responses:
+
+Endpoint: post//v1/items/browse/client
+HTTP Method: Captures user browsing information 
+Method Description: This endpoint captures user browsing information and saves them to the database.
+It takes user_id and item_id as required parameters and member_id as optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the browsed item.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/browse
+HTTP Method: Get browsed info by user id 
+Method Description: Get browsed information by id
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: post//v1/items/browse
+HTTP Method: Captures user browsing information 
+Method Description: This endpoint captures user browsing information and saves them to the database.
+It takes user_id and item_id as required parameters and member_id as optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the browsed item.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/purchase/client
+HTTP Method: Captures user purchase information and save them 
+Method Description: This endpoints captures user purchase info and save it to the database. It takes
+user_id, item_list which includes item_id, price, quantity for a specific item as
+required parameters and member_id as an optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_list, Key Type: List[Dict[str,str]], Value Type: str, Description: Represents item list of purchased items including item_id, price, quantity.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the purchased item.
+ Name: price, Key Type: str, Value Type: str, Description: Price of that purchased item.
+ Name: quantity, Key Type: str, Value Type: str, Description: Number of items that are purchased for specific item id.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/purchase
+HTTP Method: Get purchased info by user id 
+Method Description: Get purchased information by id
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: post//v1/items/purchase
+HTTP Method: Captures user purchase information and save them 
+Method Description: This endpoints captures user purchase info and save it to the database. It takes
+user_id, item_list which includes item_id, price, quantity for a specific item as
+required parameters and member_id as an optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_list, Key Type: List[Dict[str,str]], Value Type: str, Description: Represents item list of purchased items including item_id, price, quantity.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the purchased item.
+ Name: price, Key Type: str, Value Type: str, Description: Price of that purchased item.
+ Name: quantity, Key Type: str, Value Type: str, Description: Number of items that are purchased for specific item id.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/items/rating
+HTTP Method: Get rating info by user id 
+Method Description: Get ratings information by id
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: post//v1/items/rating
+HTTP Method: Capture user's given ratings on specific item and save them 
+Method Description: This endpoint captures users given ratings positive (1) or negative (0) on
+a specific item and save them to the database. It takes user_id, item_id, and
+rating for the specific item as required parameters and member_id as an optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the rated item.
+ Name: rating, Key Type: str, Value Type: str, Description: Represents the rating for specific items. The value should be either "1" or "0" where "1" represents positive rating and "0" represents negative rating.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/rating/client
+HTTP Method: Capture user's given ratings on specific item and save them using client-key 
+Method Description: This endpoint captures users given ratings positive (1) or negative (0) on
+a specific item and save them to the database. It takes user_id, item_id, and
+rating for the specific item as required parameters and member_id as an optional parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of the rated item.
+ Name: rating, Key Type: str, Value Type: str, Description: Represents the rating for specific items. The value should be either "1" or "0" where "1" represents positive rating and "0" represents negative rating.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/users/generate/id
+HTTP Method: Generate an unique user id 
+Method Description: This end point generates an unique user id.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/users
+HTTP Method: Get user info by user id 
+Method Description: Get user information by id
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+Responses:
+
+Endpoint: put//v1/users
+HTTP Method: Updates user information 
+Method Description: This endpoint captures user information and saves them to the database.
+It takes user_id and user_info as required parameters and member_id as optional
+parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: address, Key Type: Optional[str], Value Type: str, Description: Represents address of the unique user.
+ Name: gender, Key Type: Optional[int], Value Type: int, Description: Represents gender of the unique user. 1 for male or 2 for female or 3 for others.
+ Name: age, Key Type: Optional[int], Value Type: int, Description: Represents age of the user.
+ Name: key_name, Key Type: str, Value Type: str, Description: Represents the type or preference of the user. If you have multiple values for user preference you can assign them here.
+ Name: separator, Key Type: Optional[str], Value Type: str, Description: If one key contains multiple parameter with separator in your data source please assign the separator here. If there is no separator in column value you can pass 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/users
+HTTP Method: Captures user information 
+Method Description: This endpoint captures user information and saves them to the database.
+It takes user_id and user_info as required parameters and member_id as optional
+parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: address, Key Type: Optional[str], Value Type: str, Description: Represents address of the unique user.
+ Name: gender, Key Type: Optional[int], Value Type: int, Description: Represents gender of the unique user. 1 for male or 2 for female or 3 for others.
+ Name: age, Key Type: Optional[int], Value Type: int, Description: Represents age of the user.
+ Name: key_name, Key Type: str, Value Type: str, Description: Represents the type or preference of the user. If you have multiple values for user preference you can assign them here.
+ Name: separator, Key Type: Optional[str], Value Type: str, Description: If one key contains multiple parameter with separator in your data source please assign the separator here. If there is no separator in column value you can pass 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/users/client
+HTTP Method: Captures user information using client key 
+Method Description: This endpoint captures user information and saves them to the database.
+It takes user_id and user_info as required parameters and member_id as optional
+parameter.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: address, Key Type: Optional[str], Value Type: str, Description: Represents address of the unique user.
+ Name: gender, Key Type: Optional[int], Value Type: int, Description: Represents gender of the unique user. 1 for male or 2 for female or 3 for others.
+ Name: age, Key Type: Optional[int], Value Type: int, Description: Represents age of the user.
+ Name: key_name, Key Type: str, Value Type: str, Description: Represents the type or preference of the user. If you have multiple values for user preference you can assign them here.
+ Name: separator, Key Type: Optional[str], Value Type: str, Description: If one key contains multiple parameter with separator in your data source please assign the separator here. If there is no separator in column value you can pass 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/recommend
+HTTP Method: recommend the most similar items to our input item_id in terms of content 
+Method Description: This endpoint understands the content of your item and returns the most similar
+items as response. It takes user_id, item_id, details as required parameter
+and member_id as optional parameter.
+This endpoint can be used on product details page.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of an item.
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/purchased/together
+HTTP Method: recommend items those are purchased together 
+Method Description: This endpoint returns items those are frequently purchased together. 
+It takes user_id, item_id, details as required parameter
+and member_id as optional parameter.
+This endpoint can be used on product details page.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of an item.
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/users/recommend
+HTTP Method: recommend the most suitable items based on user behavior 
+Method Description: This endpoint understands user behavior such as browse, purchase, favorites,
+time spent in your application and returns the most suitable items for them
+as response. It takes user_id, details, interval, top_n_items as required parameter and member_id as
+optional parameter.
+This endpoint can be used on user feed, top page, personalized suggestions etc.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: interval, Key Type: Enum, Value Type: Selected enum value, Description: Represents the time range depending which it will predict trending and top recommended items. Available values are 
+ Name: top_n_item, Key Type: int, Value Type: int, Description: Represents number of top ranked items in given time interval.
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/trending
+HTTP Method: recommend the latest trending items 
+Method Description: This endpoint considers all sorts of possible parameters in your application
+such as user behavior, item co-relation, external impact, business impact and
+returns the trending items for given interval as response. It takes top_n_item,
+interval, details as required parameters.
+This endpoint can be used on user feed, top page, personalized suggestions etc.
+Parameters:
+ Name: top_n_item, Key Type: int, Value Type: int, Description: Represents number of top ranked items in given time interval.
+ Name: interval, Key Type: Enum, Value Type: Selected enum value, Description: Represents the time range depending which it will predict trending and top recommended items. Available values are 
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/items/image/recommend
+HTTP Method: recommend items based on image similarity 
+Method Description: This endpoint understands the features your input image contains and returns the
+most similar items in your catalog in terms of the image features. It also considers
+user behavior to boost the result. It takes user_id, item_id, details as required
+parameter and member_id, image_url as optional parameter.
+This endpoint can be used on product details page.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: item_id, Key Type: str, Value Type: str, Description: Represents the id of an item.
+ Name: ItemDetails, Key Type: Optional[Dict[str, str]], Value Type: str, Description: Represents the item details. If you use unknown item_id which does not exist in your data source then you have to pass item details to get most similar items.
+ Name: image_url, Key Type: str, Value Type: str, Description: Represents the image url of an item from this url it generate features will find the most similar items.
+ Name: price, Key Type: int, Value Type: int, Description: Represents the price of the given image_urls item.
+ Name: category, Key Type: Optional[List[str]], Value Type: int, Description: Represents the list of categories of the given image_urls item. This category values has to be matched with the previously added items data
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/users/search/recommend
+HTTP Method: recommend items based on user search history 
+Method Description: This endpoint understands user behavior based on their search history and returns
+the most suitable items for them as response. It takes user_id, type, storage, details as required
+parameter and member_id as optional parameter. This endpoint can be used on user
+feed, top page, personalized suggestions etc.
+Parameters:
+ Name: user_id, Key Type: str, Value Type: str, Description: Represents the id of a logged-out unique user.
+ Name: member_id, Key Type: Optional[str], Value Type: str, Description: Represents the id of a logged-in unique user.
+ Name: type, Key Type: Enum, Value Type: Selected enum value, Description: Represents the type of GPT search. Available values are 
+ Name: storage, Key Type: Enum, Value Type: Selected enum value, Description: Represents the type of Storage. Available values are 
+ Name: details, Key Type: bool, Value Type: bool, Description: If you want to get recommended items with details this parameter would be 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/questionnaire/recommend
+HTTP Method: Get product recommendation with questionnaire result from users. 
+Method Description: Get product recommendation with questionnaire result from users.
+Responses:
+
+Endpoint: post//v1/questionnaires
+HTTP Method: Create a new questionnaire 
+Method Description: Create a new questionnaire.
+Parameters:
+ Name: name, Key Type: str, Value Type: str, Description: name of the questionnaire
+ Name: questions, Key Type: dict[str, dict], Value Type: obj, Description: questions object hold sections and its list of questions. Each question will in their separate object. key of the question objects should be like 
+ Name: question_text, Key Type: str, Value Type: str, Description: the question string
+ Name: type, Key Type: str, Value Type: str, Description: type of the question; e.g. radio/checkbox/free text.....
+ Name: options, Key Type: str, Value Type: list[str], Description: a list of possible answers of the question and their serial
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/questionnaires/list
+HTTP Method: Get all questionnaires 
+Method Description: Get all questionnaires.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/questionnaires/{questionnaire_id}
+HTTP Method: Get details of a questionnaire. 
+Method Description: Get details of a questionnaire.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+Responses:
+
+Endpoint: put//v1/questionnaires/{questionnaire_id}
+HTTP Method: Update a questionnaire. 
+Method Description: Update a questionnaire.
+Parameters:
+ Name: name, Key Type: str, Value Type: str, Description: name of the questionnaire
+ Name: questions, Key Type: dict[str, dict], Value Type: obj, Description: questions object hold sections and its list of questions. Each question will in their separate object. key of the question objects should be like 
+ Name: question_text, Key Type: str, Value Type: str, Description: the question string
+ Name: type, Key Type: str, Value Type: str, Description: type of the question; e.g. radio/checkbox/free text.....
+ Name: options, Key Type: str, Value Type: list[str], Description: a list of possible answers of the question and their serial
+Responses:
+
+Endpoint: delete//v1/questionnaires/{questionnaire_id}
+HTTP Method: Delete a questionnaire. 
+Method Description: Delete a questionnaire.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+Responses:
+
+Endpoint: get//v1/questionnaires/{questionnaire_id}/mapper
+HTTP Method: Get the mapper of a questionnaire. 
+Method Description: Get details of a questionnaire mapper.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+Responses:
+
+Endpoint: put//v1/questionnaires/{questionnaire_id}/mapper
+HTTP Method: Update a mapper. 
+Method Description: Update a mapper.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+ Name: prompt_sections, Key Type: str, Value Type: Dict[str, str], Description: List of the prompt sections. Each section will have its own key, these key will used in mapper
+ Name: prompt_order, Key Type: str, Value Type: List[str], Description: A list of prompt sections key in the order they should be in the resultant prompt
+ Name: questions, Key Type: str, Value Type: Dict[str, Dict], Description: Contains the question sections and their questions
+ Name: mapper, Key Type: str, Value Type: Dict[str, Dict], Description: maps different answers to decisions.
+ Name: model, Key Type: str, Value Type: Selected enum value, Description: Represents the the model to be used for recommendation generation.
+ Name: max_token_size, Key Type: int, Value Type: int, Description: expected max token size for the reply
+ Name: intro, Key Type: str, Value Type: str, Description: Share a little context about the questionnaire
+ Name: system, Key Type: str, Value Type: str, Description: You are an expert on ...
+Responses:
+
+Endpoint: post//v1/questionnaires/{questionnaire_id}/mapper
+HTTP Method: Add mapper for a questionnaire. 
+Method Description: Add a mapper for a questionnaire.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+ Name: prompt_sections, Key Type: str, Value Type: Dict[str, str], Description: List of the prompt sections. Each section will have its own key, these key will used in mapper
+ Name: prompt_order, Key Type: str, Value Type: List[str], Description: A list of prompt sections key in the order they should be in the resultant prompt
+ Name: questions, Key Type: str, Value Type: Dict[str, Dict], Description: Contains the question sections and their questions
+ Name: mapper, Key Type: str, Value Type: Dict[str, Dict], Description: maps different answers to decisions.
+ Name: model, Key Type: str, Value Type: Selected enum value, Description: Represents the the model to be used for recommendation generation.
+ Name: max_token_size, Key Type: int, Value Type: int, Description: expected max token size for the reply
+ Name: intro, Key Type: str, Value Type: str, Description: Share a little context about the questionnaire
+ Name: system, Key Type: str, Value Type: str, Description: You are an expert on ...
+Responses:
+
+Endpoint: delete//v1/questionnaires/{questionnaire_id}/mapper
+HTTP Method: Delete a mapper. 
+Method Description: Delete a mapper.
+Parameters:
+ Name: questionnaire_id, Key Type: str, Value Type: str, Description: The ID of the questionnaire to retrieve. (Required)
+Responses:
+
+Endpoint: get//v1/questionnaires/{questionnaire_id}/logs
+HTTP Method: Get logs of responses against a questionnaire. 
+Method Description: Get logs of responses against a questionnaire.
+Responses:
+
+Endpoint: get//v1/tasks/{task_id}
+HTTP Method: Get a task by its id 
+Method Description: Get the latest status of a background task by passing task id as a query parameter.
+Parameters:
+ Name: task_id, Key Type: str, Value Type: str, Description: Represents the id of a background task.
+Responses:
+
+Endpoint: get//v1/tasks
+HTTP Method: get all task by type and status 
+Method Description: Get a list of all tasks by a specific type. By default this endpoint will return
+latest 100 tasks with their details.
+Parameters:
+ Name: task_type, Key Type: Enum, Value Type: Selected enum value, Description: Available values are 
+ Name: task_status, Key Type: Enum, Value Type: Selected enum value, Description: Available values are 
+Responses:
+
+Endpoint: post//v1/reach
+HTTP Method: Shows user reach of recommender API 
+Method Description: This endpoint will show the stats of user reach for browsing, purchasing,
+and rating items. User need to choose the unit for getting respected response.
+Parameters:
+ Name: reach_type, Key Type: Enum, Value Type: Selected enum value, Description: Represents the unit for counting the user reach for browsing, purchasing and rating. Available values are 
+ Name: start_date, Key Type: Optional[str], Value Type: str, Description: Initial date of date range based on which it will show major KPIs of our recommender system.
+ Name: end_date, Key Type: Optional[str], Value Type: str, Description: End date of date range based on which it will show major KPIs of our recommender system.
+Responses:
+
+Endpoint: post//v1/stats
+HTTP Method: Save document in the stats index 
+Method Description: This endpoint will create the a document stats index.
+Parameters:
+ Name: start_date, Key Type: str, Value Type: str, Description: Initial date of date range based on which you want to save stats.
+ Name: end_date, Key Type: str, Value Type: str, Description: End date of date range based on which you want to save stats.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/stats/{date}
+HTTP Method: Get document from the stats index 
+Method Description: 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/stats/{date}
+HTTP Method: Update document in the stats index 
+Method Description: This endpoint will update the existing document.
+Responses:
+
+Endpoint: delete//v1/stats/{date}
+HTTP Method: Delete document in the stats index 
+Method Description: 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/gpt/dataset/train
+HTTP Method: Train dataset to produce pre-processed data and embeddings and save it in vector db 
+Method Description: GPT train for a specific dataset.
+Responses:
+
+Endpoint: get//v1/gpt/datasets
+HTTP Method: Get list of all datasets 
+Method Description: Get metadata of all dataset.
+Parameters:
+ Name: start, Key Type: Optional[int], Value Type: int, Description: The starting index for dataset retrieval (default is 0, minimum is 0).
+ Name: size, Key Type: Optional[int], Value Type: int, Description: The number of records to retrieve (default is 10, minimum is 1, maximum is 1000).
+Responses:
+
+Endpoint: post//v1/gpt/datasets
+HTTP Method: Upload your dataset for training. MyGPT supports CSV, JSON formats. 
+Method Description: Upload dataset to train your GPT. 
+Parameters:
+ Name: name, Key Type: str, Value Type: str, Description: The name of the dataset.
+ Name: idx_column, Key Type: Optional[str], Value Type: str, Description: The index column of the dataset default is 
+ Name: is_idx_fillup_if_empty, Key Type: bool, Value Type: Should we fill up empty index values?, Description: None
+ Name: secondary_idx_column, Key Type: Optional[str], Value Type: str, Description: The secondary index column of the dataset.
+ Name: image_url_column, Key Type: Optional[str], Value Type: str, Description: image url column or field name
+ Name: description, Key Type: Optional[str], Value Type: str, Description: The description of the dataset.
+ Name: dataset_file, Key Type: Optional, Value Type: Binary File, Description: The 
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/gpt/datasets/{dataset_id}
+HTTP Method: Get summary of a dataset 
+Method Description: Get details of a dataset. The response includes both metadata and documents summaries like, 
+a. Total document count
+b. Total text trained document count
+c. Total image trained document count
+d. Active document count
+Parameters:
+ Name: dataset_id, Key Type: str, Value Type: str, Description: ID of the dataset
+Responses:
+
+Endpoint: put//v1/gpt/datasets/{dataset_id}
+HTTP Method: Update a dataset 
+Method Description: Update a dataset meta data and/or add documents from csv/json file.
+Parameters:
+ Name: dataset_id, Key Type: str, Value Type: str, Description: ID of the dataset to be updated
+ Name: name, Key Type: str, Value Type: str, Description: The name of the dataset.
+ Name: is_idx_fillup_if_empty, Key Type: bool, Value Type: Should we fill up empty index values?, Description: None
+ Name: secondary_idx_column, Key Type: Optional[str], Value Type: str, Description: The secondary index column of the dataset.
+ Name: image_url_column, Key Type: Optional[str], Value Type: str, Description: image url column or field name
+ Name: description, Key Type: Optional[str], Value Type: str, Description: The description of the dataset.
+ Name: dataset_file, Key Type: Optional, Value Type: Binary File, Description: The 
+Responses:
+
+Endpoint: delete//v1/gpt/datasets/{dataset_id}
+HTTP Method: Deletes the dataset 
+Method Description: Deletes a dataset entierly. To clear a dataset use 
+Parameters:
+ Name: dataset_id, Key Type: str, Value Type: str, Description: ID of the dataset
+Responses:
+
+Endpoint: get//v1/gpt/datasets/{dataset_id}/documents
+HTTP Method: Get data of a dataset 
+Method Description: Get data of a dataset. Use query parameters to customize the search result.
+Parameters:
+ Name: start, Key Type: Optional[int], Value Type: int, Description: The starting index for dataset retrieval (default is 0, minimum is 0).
+ Name: size, Key Type: Optional[int], Value Type: int, Description: The number of records to retrieve (default is 10, minimum is 1, maximum is 1000).
+ Name: text_training_status, Key Type: Optional[str], Value Type: str, Description: The status of the dataset (possible values are 
+ Name: image_training_status, Key Type: Optional[str], Value Type: str, Description: The status of the dataset (possible values are 
+ Name: active_status, Key Type: Optional[str], Value Type: str, Description: The active status of the dataset (possible values are 
+Responses:
+
+Endpoint: put//v1/gpt/datasets/{dataset_id}/documents
+HTTP Method: Update documents 
+Method Description: Update documents under a dataset. User can update metadata in bulk with document ids.
+If all is 
+Parameters:
+ Name: ids, Key Type: Optional[list[str]], Value Type: list[str], Description: A list of idxs of the dataset which needs to be updated.
+ Name: all, Key Type: Optional[bool], Value Type: bool, Description: determines if all documents should be updated, default 
+ Name: metadata_updates, Key Type: list[dict], Value Type: list[dict], Description: A list of objects containing data rows to update.
+Responses:
+
+Endpoint: post//v1/gpt/datasets/{dataset_id}/documents
+HTTP Method: Create documents under a dataset 
+Method Description: Create documents under a dataset.
+Parameters:
+ Name: data_list, Key Type: list[dict], Value Type: list[dict], Description: A list of objects
+Responses:
+
+Endpoint: delete//v1/gpt/datasets/{dataset_id}/documents
+HTTP Method: Delete documents 
+Method Description: delete documents under a dataset. User can delete documets in bulk with document ids.
+If all is 
+Parameters:
+ Name: ids, Key Type: Optional[list[str]], Value Type: list[str], Description: A list of idxs of the dataset which are to be deleted.
+ Name: all, Key Type: Optional[bool], Value Type: bool, Description:  if all documents to be deleted from the dataset while keeping the dataset, default 
+Responses:
+
+Endpoint: get//v1/gpt/datasets/{dataset_id}/{document_id}
+HTTP Method: Get documents by its id. 
+Method Description: get details of the document with ID.
+Responses:
+
+Endpoint: put//v1/gpt/datasets/{dataset_id}/{document_id}
+HTTP Method: Update documents by its id. 
+Method Description: Update a single document under the dataset
+Responses:
+
+Endpoint: delete//v1/gpt/datasets/{dataset_id}/{document_id}
+HTTP Method: Delete single document by its id from the index 
+Method Description: Delete a single document under the dataset
+Responses:
+
+Endpoint: post//v1/gpt/save
+HTTP Method: Upload a CSV file 
+Method Description: Saves GPT related files
+Responses:
+
+Endpoint: post//v1/gpt/ask
+HTTP Method: Ask a question and receive an answer 
+Method Description: Response from GPTFlow
+Responses:
+
+Endpoint: post//v1/gpt/ask/vision
+HTTP Method: Ask GPT with Image 
+Method Description: This endpoint generates search results based on image similarity and your query.
+Parameters:
+ Name: image, Key Type: str($bin), Value Type: file, Description: Represents the image file used to search/ask. Supports webp, jpeg, jpg, and png formats.
+ Name: query, Key Type: str, Value Type: str, Description: Query to ask to gpt
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/gpt/train
+HTTP Method: Train with pre-processed data and embeddings and save it in vector db 
+Method Description: GPT train
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/gpt/conversations/{conversation_id}
+HTTP Method: Get details of a conversation 
+Method Description: Get details of a GPT conversation.
+Parameters:
+ Name: conversation_id, Key Type: str, Value Type: str, Description: The ID of the conversation to retrieve. (Required)
+Responses:
+
+Endpoint: get//v1/gpt/conversations
+HTTP Method: Get gpt conversations of the project 
+Method Description: Provides a list of conversations. It takes to optional parameter: start_date and end_date to indicate the range of conversations. 
+By default it assumes a delta of 7 days.
+Parameters:
+ Name: start_date, Key Type: Optional[str], Value Type: str, Description: Initial date of the conversation date range.
+ Name: end_date, Key Type: Optional[str], Value Type: str, Description: End date of the conversation date range.
+Responses:
+
+Endpoint: put//v1/gpt/conversations
+HTTP Method: Send your feedback for a received answer 
+Method Description: Feedback for GPTFlow response
+Parameters:
+ Name: conversation_id, Key Type: str, Value Type: str, Description: ID of the conversation to provide feedback for.
+ Name: message, Key Type: optional[str], Value Type: str, Description: Feedback message describing the user's experience of the GPT response.
+ Name: type, Key Type: str, Value Type: str, Description: Type of feedback (e.g., positive, negative).
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: get//v1/gpt/settings
+HTTP Method: Get GPT settings 
+Method Description: Get your saved GPT settings.
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: put//v1/gpt/settings
+HTTP Method: Update gpt settings 
+Method Description: Update the project wide settings for GPT. It takes following parameters. 
+Parameters:
+ Name: model, Key Type: str, Value Type: str, Description: The name of model. Supported models are 
+ Name: bot_mode_strict, Key Type: bool, Value Type: bool, Description: If the bot mode is strict or not (default is False).
+ Name: system, Key Type: str, Value Type: str, Description: setup the bot persona e.g. You are an expert on ....
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+
+Endpoint: post//v1/gpt/settings
+HTTP Method: Create GPT settings 
+Method Description: This endpoint determines the project wide settings for GPT. It takes following parameters. 
+Parameters:
+ Name: model, Key Type: str, Value Type: str, Description: The name of model. Supported models are 
+ Name: bot_mode_strict, Key Type: bool, Value Type: bool, Description: If the bot mode is strict or not (default is False).
+ Name: system, Key Type: str, Value Type: str, Description: setup the bot persona e.g. You are an expert on ....
+Responses:
+ Code: 200 , Description: Successful Response
+ Code: 202 , Description: Accepted
+ Code: 400 , Description: Bad Request
+ Code: 401 , Description: Unauthorized
+ Code: 403 , Description: Forbidden
+ Code: 404 , Description: Not Found
+ Code: 422 , Description: Validation Error
+ Code: 429 , Description: Too Many Requests
+ Code: 500 , Description: Internal Server Error
+

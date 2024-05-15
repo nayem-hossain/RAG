@@ -1,0 +1,56 @@
+URL: https://tutorial.gigalogy.com/release_notes/
+
+Title: Release notes - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+GAIP Release notes
+Apr 5, 2024
+New feature
+questionnaire mapper now supports result format. User can setup how they want to see the questionnaire result. User can setup required categories and optional categories. Recommended items from POST /v1/questionnaire/recommend will be categorized based on that. Optional categories come with their inclusion condition as well.
+Mar 27, 2024
+New feature
+From the GPT-Flow History table, you can now select which data (Query, response, feedback) you want to include in the training for future conversations and in which dataset.
+Mar 27, 2024
+New feature
+Now POST /v1/gpt/ask API have multiple options to generate answer. This can be set as the value of the key conversation_type, question type does not consider any previous conversation history. chat type considers n previous conversation history while generating an answer. The length of the converstaion is defined by the parameter chat_history_length of GPT settings.
+Mar 26, 2024
+New features
+In the same project, /gpt/ask API can now answer from both personalizer catalog and MyGPT datasets. Previously it could handle only one of the data sources.
+Introducing "Profiles" for our GPT solutions! You can now create and save multiple profiles, each with its own settings . Users no longer have to manually adjust the GPT settings every time they switch between different tasks or needs.
+Mar 20, 2024
+New features
+keyword extractor changed for japanese language. This is done to improve the quality of japanese language search capabilities. top_k can control how wide or controlled search a customer wants to do in terms of keywords.
+questionnaire/recommend end point now has a new optional parameter called recommend_count. If it is set, the value of this parameter takes priority over recommend_count variable in questionnaire mapper.
+Mar 16, 2024
+New feature
+gpt/ask and questionnaire/recommend endpoints, when providing response with product IDs, now can include any key that was set in the mapper.
+Now it is easier to set how many product questionnaire/recommend will give, with the new key "recommend_count" in the mapper.
+introducing top_k to items/search, gpt/ask, giving ability to controls the number of keywords to consider for document searching.
+Bug Fix
+questionnaire/recommend endpoint can now take Null values.
+Mar 3, 2024
+New feature
+UI-Based Project Setup: Now set up Personalization Projects directly via the UI, including file uploads, data mapping, and model training.
+Training History: View detailed training history in Project Settings for improved tracking and insights.
+Manual Training: Initiate model training manually from the UI for greater control over your personalization strategies.
+Jan 25, 2024
+New features
+Add an export button at the bottom of the GPT flow history table. Exports the Table as a CSV file for the specified time range
+GAIP sidebar improved: Solutions are accessible directly now.
+Big fix
+Bug at trial project status and upgrade flow
+Previous
+API Reference
+Next
+Glossary
+Made with Material for MkDocs

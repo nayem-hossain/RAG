@@ -1,0 +1,41 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/03_Trending_Items_Recommendation_Engine/
+
+Title: Recommend trending items - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Trending items recommendation engine
+Our /v1/items/trending endpoint considers all kind of possible parameters in your application such as user behavior, item co-relation, external impact, business impact and returns the trending items for a given interval as response. You can use it on user feed, top page, personalized suggestions etc.
+To use this feature, you must first set up the key parameters for the ranking model via the endpoint POST /v1/ranks/settings.
+You can find the required parameters with their description and an example request body here.
+You can always check the current setting using GET /v1/ranks/settings and update the setting using PUT /v1/ranks/settings.
+Once the above setting is done, then you can set up the feature for showing trending items using the below request path:
+POST /v1/items/trending
+To implement this solution, the required parameters with their description and an example request body can be found here. You can find sample code for implementation here.
+Previous
+Personalized Feed
+Next
+Recommend similar items
+Made with Material for MkDocs

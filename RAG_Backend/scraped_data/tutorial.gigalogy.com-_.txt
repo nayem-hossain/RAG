@@ -1,0 +1,28 @@
+URL: https://tutorial.gigalogy.com/#api-reference
+
+Title: Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Overview
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+Overview
+The Gigalogy AI platform (GAIP) introduces cutting-edge solutions, designed to craft personalized product offerings. These solutions address specific user needs while propelling business growth. The platform provides solutions for personalization, Custom GPT creation and CV based solution. Within this documentation, you will discover comprehensive guidance on integrating the solutions, understanding its operational framework, and leveraging its capabilities within your application.
+Let's have a rundown of the documentation:
+Tutorial
+To seamlessly integrate your product with our solutions, this section serves as your comprehensive guide. It provides a detailed, step-by-step walkthrough for integrating an API with our solutions. Additionally, you'll gain insights into how the solution function and discover strategies for effectively building your application with it. For an optimal integration process, it is advisable to thoroughly review this section prior to integrating your product.
+Get started
+API Reference
+This section offers developer-friendly API documentation designed to guide you through accessing and utilizing the recommender API effectively.
+API Reference
+Next
+Account and Project creation
+Made with Material for MkDocs

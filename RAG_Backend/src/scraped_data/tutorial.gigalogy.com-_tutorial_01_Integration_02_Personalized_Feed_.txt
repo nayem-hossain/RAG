@@ -1,0 +1,46 @@
+URL: https://tutorial.gigalogy.com/tutorial/01_Integration/02_Personalized_Feed/
+
+Title: Personalized Feed - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+Personalizer
+Project setup
+Environment setup
+Integration of Catalogue information and user behavior data
+Training your data
+Personalized search
+Personalized Image Search
+Personalized Feed
+Recommend trending items
+Recommend similar items
+Recommend items purchase together
+Dynamic Pricing
+Questionnaire
+MyGPT
+API Reference
+Release notes
+Glossary
+Personalized Feed
+These solutions can be used to personalize the user feed when they log into your website, open the homepage, or search for products, among other actions.
+There are two endpoints here that you can use at different sections of the page
+1. users/recommend
+POST /v1/users/recommend can be used to personalize the user feed such as the home page or some other general pages.
+v1/users/recommend endpoint understands user behavior such as browse history, purchase history, favorites/wishlist, time spent in your application and returns the most suitable items for them as a response.
+The details of required parameters and a sample request body for this can be found here.
+You can find sample code for implementation here.
+2. users/search/recommend
+This endpoint analyzes user search history and, based on that, returns recommended items to the user. It can be integrated into the user feed, the top page, personalized suggestions, or as a widget, among other applications.
+Additionally, the response from this endpoint can be utilized to send users emails about products recommended based on their search history.
+Request path:
+POST /v1/users/search/recommend To implement this solution, you can find the description of the required parameters and an example request body here. You can find sample codes for implementation here.
+Previous
+Personalized Image Search
+Next
+Recommend trending items
+Made with Material for MkDocs

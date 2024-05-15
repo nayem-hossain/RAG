@@ -1,0 +1,23 @@
+URL: https://tutorial.gigalogy.com/api_reference/
+
+Title: API Reference - Gigalogy Tutorial
+
+Content:
+Gigalogy Tutorial
+Gigalogy Tutorial
+Overview
+Account and Project creation
+Credentials
+Personalizer
+MyGPT
+API Reference
+Release notes
+Glossary
+API Reference
+API Documentation URL
+Sandbox URL
+Previous
+GPT Feedback
+Next
+Release notes
+Made with Material for MkDocs
